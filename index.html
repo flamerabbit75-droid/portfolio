@@ -5,174 +5,173 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>AI CREATOR Portfolio</title>
 
-  <!-- OGP -->
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="AI CREATOR｜アキフル">
-  <meta property="og:description" content="AIとクリエイティブで、伝わる表現を丁寧に整えるポートフォリオサイトです。">
-  <meta property="og:image" content="https://flamerabbit75-droid.github.io/portfolio/ogp.png">
-  <metこれでa property="og:url" content="https://flamerabbit75-droid.github.io/portfolio/">
-
-  <!-- Twitter用（X） -->
-  <meta name="twitter:card" content="summary_large_image">
+  <!-- ===== OGP（ここだけあなたのGitHub Pages URLに差し替え推奨） =====
+    例）https://YOURNAME.github.io/REPO/
+  -->
+  <meta property="og:title" content="AI CREATOR Portfolio｜アキフル" />
+  <meta property="og:description" content="AIを使いながらも、人の感覚を置き去りにしない制作。文章・画像・動画まで「伝わる」を丁寧に整えます。" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://YOURNAME.github.io/REPO/" />
+  <meta property="https://flamerabbit75-droid.github.io/portfolio/" content="https://YOURNAME.github.io/REPO/ogp.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="AI CREATOR Portfolio｜アキフル" />
+  <meta name="twitter:description" content="AIを使いながらも、人の感覚を置き去りにしない制作。文章・画像・動画まで「伝わる」を丁寧に整えます。" />
+  <meta name="twitter:image" content="https://YOURNAME.github.io/REPO/ogp.png" />
+  <!-- ================================================================ -->
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap"
+    rel="stylesheet"
+  />
 
   <style>
-    /* =========================
-       基本設定
-    ========================= */
-    :root {
-      --primary-color: #4e7df5;
-      --secondary-color: #a768f6;
-      --text-color: #333333;
-      --text-light: #666666;
-      --bg-white: #ffffff;
-      --bg-light: #f8f9fa;
-      --gradient-main: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    /* --- 基本設定 --- */
+    :root{
+      --primary-color:#4e7df5;
+      --secondary-color:#a768f6;
+      --text-color:#333333;
+      --text-light:#666666;
+      --bg-white:#ffffff;
+      --bg-light:#f8f9fa;
+      --gradient-main:linear-gradient(135deg,var(--primary-color),var(--secondary-color));
     }
 
-    * { box-sizing: border-box; }
+    *{ box-sizing:border-box; }
 
-    body {
-      font-family: "Noto Sans JP", sans-serif;
-      margin: 0;
-      padding: 0;
-      color: var(--text-color);
-      background: var(--bg-white);
-      line-height: 1.7;
+    body{
+      font-family:"Noto Sans JP",sans-serif;
+      margin:0;
+      padding:0;
+      color:var(--text-color);
+      background:var(--bg-white);
+      line-height:1.6;
     }
 
-    a {
-      text-decoration: none;
-      color: inherit;
-      transition: color 0.3s ease;
+    a{
+      text-decoration:none;
+      color:var(--text-color);
+      transition:color .3s ease;
     }
 
-    h1, h2, h3 { margin: 0; font-weight: 700; }
-    p { margin: 0 0 1.2em; }
+    h1,h2,h3{ margin:0; font-weight:700; }
+    p{ margin:0 0 1.0em; }
 
-    .container {
-      width: 90%;
-      max-width: 1200px;
-      margin: 0 auto;
+    .container{
+      width:90%;
+      max-width:1200px;
+      margin:0 auto;
     }
 
-    section { padding: 80px 0; }
+    section{ padding:80px 0; }
 
-    /* セクションタイトル */
-    .section-title {
-      text-align: center;
-      font-size: 2.5rem;
-      margin-bottom: 60px;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      color: var(--primary-color);
+    /* セクション見出し */
+    .section-title,
+    .about-text h2{
+      color:var(--primary-color);
+    }
+
+    .section-title{
+      text-align:center;
+      font-size:2.5rem;
+      margin:0 0 60px;
+      text-transform:uppercase;
+      letter-spacing:.05em;
     }
 
     /* ボタン */
-    .btn {
-      display: inline-block;
-      padding: 12px 36px;
-      border-radius: 50px;
-      font-weight: 700;
-      text-align: center;
-      cursor: pointer;
-      transition: all 0.3s ease;
+    .btn{
+      display:inline-block;
+      padding:12px 36px;
+      border-radius:50px;
+      font-weight:700;
+      text-align:center;
+      cursor:pointer;
+      transition:all .3s ease;
+    }
+    .btn-gradient{
+      background:var(--gradient-main);
+      color:#fff;
+      box-shadow:0 4px 15px rgba(78,125,245,.3);
+    }
+    .btn-gradient:hover{
+      transform:translateY(-2px);
+      box-shadow:0 6px 20px rgba(78,125,245,.4);
+      color:#fff;
     }
 
-    .btn-gradient {
-      background: var(--gradient-main);
-      color: #fff;
-      box-shadow: 0 4px 15px rgba(78, 125, 245, 0.3);
+    /* --- ヘッダー --- */
+    .header{
+      padding:20px 0;
+      position:absolute;
+      width:100%;
+      top:0;
+      z-index:100;
     }
-
-    .btn-gradient:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 6px 20px rgba(78, 125, 245, 0.4);
-      color: #fff;
-    }
-
-    /* =========================
-       ヘッダー
-    ========================= */
-    .header {
-      position: absolute;
-      top: 0;
-      width: 100%;
-      z-index: 100;
-      padding: 20px 0;
-    }
-
-    .header .container {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 20px;
+    .header .container{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:24px;
     }
 
     /* ロゴ（AI CREATOR + アキフル） */
-    .logo {
-      display: inline-flex;
-      flex-direction: column;
-      gap: 4px;
-      line-height: 1.1;
+    .logo{
+      display:inline-flex;
+      flex-direction:column;
+      gap:4px;
+      line-height:1.1;
+      text-decoration:none;
+      user-select:none;
     }
-
-    .logo-title {
-      font-size: 1.5rem;
-      font-weight: 700;
-      color: var(--primary-color); /* AI を青 */
+    .logo-title{
+      font-size:1.5rem;
+      font-weight:700;
+      color:var(--primary-color); /* AI を青 */
     }
-
-    .logo-title .logo-creator {
-      color: var(--text-color); /* CREATOR を黒 */
+    .logo-title .logo-creator{
+      color:var(--text-color); /* CREATOR を黒 */
     }
-
-    .logo-name {
-      font-size: 0.9rem;
-      font-weight: 500;
-      color: var(--text-light); /* 薄いグレー */
+    .logo-name{
+      font-size:.9rem;
+      font-weight:500;
+      color:var(--text-light); /* 薄いグレー */
     }
+    .logo:hover .logo-title{ color:var(--primary-color); }
+    .logo:hover .logo-title .logo-creator{ color:var(--text-color); }
+    .logo:hover .logo-name{ color:var(--text-light); }
 
     /* ナビ */
-    .nav {
-      display: flex;
-      gap: 28px;
-      align-items: center;
+    .nav{
+      display:flex;
+      gap:28px;
+      align-items:center;
+      flex-wrap:wrap;
     }
-
-    .nav a {
-      font-size: 0.95rem;
-      font-weight: 500;
-      color: var(--text-light);
-      position: relative;
-      padding: 6px 2px;
+    .nav a{
+      font-size:.95rem;
+      font-weight:500;
+      color:var(--text-light);
+      position:relative;
     }
-
-    .nav a:hover { color: var(--primary-color); }
-
-    .nav a::after {
-      content: "";
-      position: absolute;
-      left: 0;
-      bottom: 0px;
-      width: 0%;
-      height: 2px;
-      background: var(--primary-color);
-      transition: width 0.25s ease;
+    .nav a:hover{ color:var(--primary-color); }
+    .nav a::after{
+      content:"";
+      position:absolute;
+      left:0;
+      bottom:-6px;
+      width:0%;
+      height:2px;
+      background:var(--primary-color);
+      transition:width .3s ease;
     }
+    .nav a:hover::after{ width:100%; }
 
-    .nav a:hover::after { width: 100%; }
-
-    /* =========================
-       ヒーロー
-    ========================= */
-    .hero {
-      padding: 180px 0 100px;
-      position: relative;
-
+    /* --- Hero --- */
+    .hero{
+      padding:180px 0 110px;
+      position:relative;
       background-image:
         linear-gradient(
           90deg,
@@ -182,174 +181,173 @@
           rgba(255,255,255,0.00) 100%
         ),
         url("./hero_rabbit.png");
-
-      background-repeat: no-repeat, no-repeat;
-      background-position: left center, right center;
-      background-size: cover, contain;
+      background-repeat:no-repeat,no-repeat;
+      background-position:left center,right center;
+      background-size:cover,contain;
     }
-
-    .hero-content {
-      position: relative;
-      z-index: 1;
-      max-width: 640px;
+    .hero-content{ max-width:620px; }
+    .hero-title{
+      font-size:3.2rem;
+      line-height:1.2;
+      margin:0 0 18px;
     }
-
-    .hero-title {
-      font-size: 3.2rem;
-      line-height: 1.2;
-      margin-bottom: 18px;
+    .hero-text{
+      font-size:1.05rem;
+      color:var(--text-light);
+      margin:0 0 14px;
     }
+    .hero-text:last-of-type{ margin-bottom:34px; }
 
-    .hero-text {
-      font-size: 1.05rem;
-      color: var(--text-light);
-      margin-bottom: 28px;
+    /* --- Services --- */
+    .services{ background:var(--bg-light); }
+    .services-grid{
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:30px;
+      margin-top:10px;
     }
-
-    /* =========================
-       ABOUT
-    ========================= */
-    #about .container {
-      display: flex;
-      align-items: center;
-      gap: 120px;
+    .service-card{
+      background:var(--bg-white);
+      padding:40px 30px;
+      border-radius:16px;
+      text-align:center;
+      box-shadow:0 10px 30px rgba(0,0,0,0.05);
+      transition:transform .25s ease;
     }
-
-    .about-image { flex: 1; display: flex; justify-content: center; }
-
-    .about-image-layer {
-      width: 100%;
-      max-width: 420px;
-      height: 350px;
-
-      background-image: url("./about-working-rabbit.jpg");
-      background-repeat: no-repeat;
-      background-position: center 40px;
-      background-size: 115%;
-
-      transform: translateY(-6px);
-      box-shadow: 0 18px 30px rgba(0,0,0,0.08);
-      opacity: 0.65;
-      border-radius: 18px;
+    .service-card:hover{ transform:translateY(-8px); }
+    .service-icon{
+      font-size:2.2rem;
+      line-height:1;
+      margin-bottom:18px;
     }
+    .service-card h3{ font-size:1.1rem; margin:0 0 12px; }
+    .service-card p{ margin:0; font-size:.9rem; color:var(--text-light); }
 
-    .about-text { flex: 1; }
-
-    .about-text h2 {
-      color: var(--primary-color);
-      font-size: 1.2rem;
-      letter-spacing: 0.08em;
-      margin-bottom: 10px;
+    /* --- About --- */
+    .about .container{
+      display:flex;
+      align-items:center;
+      gap:90px;
     }
-
-    .about-text h3 {
-      font-size: 1.35rem;
-      margin-bottom: 14px;
+    .about-image{ flex:1; display:flex; justify-content:center; }
+    .about-image-layer{
+      width:100%;
+      max-width:420px;
+      height:350px;
+      border-radius:18px;
+      background-image:url("./about-working-rabbit.jpg");
+      background-repeat:no-repeat;
+      background-position:center 40px;
+      background-size:115%;
+      box-shadow:0 18px 30px rgba(0,0,0,0.08);
+      opacity:.65;
     }
-
-    .about-text p {
-      color: var(--text-light);
-      margin-bottom: 1.2em;
+    .about-text{ flex:1; }
+    .about-text h2{
+      margin:0 0 10px;
+      font-size:2rem;
+      letter-spacing:.05em;
     }
-
-    /* =========================
-       WORKS
-    ========================= */
-    #works .lead {
-      max-width: 720px;
-      margin: 0 auto 30px;
-      color: var(--text-light);
-      text-align: left;
+    .about-text h3{
+      margin:0 0 18px;
+      font-size:1.25rem;
     }
+    .about-text p{ color:var(--text-light); margin:0 0 14px; }
 
-    /* ✅ ここをgrid固定にして「巨大な横長が出る」崩れを防ぐ */
-    .works-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 30px;
+    /* --- Works --- */
+    .works-tabs{
+      display:flex;
+      justify-content:center;
+      list-style:none;
+      padding:0;
+      margin:0 0 20px;
     }
-
-    .work-card {
-      background: var(--bg-white);
-      border-radius: 16px;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.08);
-      overflow: hidden;
-      display: flex;
-      flex-direction: column;
-      min-width: 0;
+    .works-intro{
+      max-width:720px;
+      margin:0 auto 30px;
+      color:var(--text-light);
+      text-align:center;
     }
-
-    .work-item {
-      position: relative;
-      aspect-ratio: 4 / 3;
-      background: #eee;
-      overflow: hidden;
+    .works-grid{
+      display:flex;
+      flex-wrap:wrap;
+      gap:30px;
     }
-
+    .work-card{
+      background:var(--bg-white);
+      border-radius:16px;
+      box-shadow:0 5px 15px rgba(0,0,0,0.08);
+      overflow:hidden;
+      display:flex;
+      flex-direction:column;
+      flex:1 1 calc(33.333% - 20px);
+      max-width:calc(33.333% - 20px);
+    }
+    .work-item{
+      position:relative;
+      aspect-ratio:4/3;
+      background:#eee;
+      overflow:hidden;
+    }
     .work-item > img,
-    .work-item > video {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
+    .work-item > video{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      display:block;
+      transform:scale(1.001);
+    }
+    .work-caption{ padding:16px 20px 20px; }
+    .work-caption h3{ font-size:1rem; margin:0 0 8px; }
+    .work-caption p{ margin:0; font-size:.85rem; color:var(--text-light); }
+
+    /* videoクリック対策（念のため） */
+    .work-item video{
+      position:relative;
+      z-index:2;
+      pointer-events:auto;
     }
 
-    .work-caption { padding: 16px 20px 20px; }
-
-    .work-caption h3 {
-      font-size: 1rem;
-      margin-bottom: 8px;
+    /* --- レスポンシブ --- */
+    @media (max-width: 992px){
+      .hero-title{ font-size:2.8rem; }
+      .services-grid{ grid-template-columns:repeat(2,1fr); }
+      .about .container{ flex-direction:column; text-align:center; gap:40px; }
+      .work-card{ flex:1 1 calc(50% - 20px); max-width:calc(50% - 20px); }
+    }
+    @media (max-width: 768px){
+      .header .container{ padding:0 20px; }
+      .nav{ display:none; }
+      .hero{ padding:140px 0 60px; }
+      .hero-title{ font-size:2rem; }
+      .services-grid{ grid-template-columns:1fr; max-width:420px; margin:0 auto; }
+      .works-tabs{ flex-wrap:wrap; }
+    }
+    @media (max-width: 600px){
+      .work-card{ flex:1 1 100%; max-width:100%; }
     }
 
-    .work-caption p {
-      margin: 0;
-      font-size: 0.85rem;
-      color: var(--text-light);
-    }
-
-    /* =========================
-       フッター
-    ========================= */
-    footer {
-      text-align: center;
-      padding: 30px 0;
-      background: var(--bg-light);
-      color: var(--text-light);
-      font-size: 0.9rem;
-    }
-
-    /* =========================
-       レスポンシブ
-    ========================= */
-    @media (max-width: 992px) {
-      .hero-title { font-size: 2.6rem; }
-      #about .container { flex-direction: column; text-align: center; gap: 40px; }
-      .works-grid { grid-template-columns: repeat(2, 1fr); }
-      #works .lead { text-align: center; }
-    }
-
-    @media (max-width: 768px) {
-      .header .container { padding: 0 10px; }
-      .nav { display: none; } /* スマホは非表示（静かな1P設計） */
-      .hero { padding: 140px 0 70px; }
-      .hero-title { font-size: 2rem; }
-      .works-grid { grid-template-columns: 1fr; }
+    /* --- フッター --- */
+    .footer{
+      text-align:center;
+      padding:30px 0;
+      background:var(--bg-light);
+      color:var(--text-light);
+      font-size:.9rem;
     }
   </style>
 </head>
 
 <body>
-  <!-- ヘッダー -->
   <header class="header">
     <div class="container">
       <a href="#home" class="logo">
-        <span class="logo-title">
-          AI <span class="logo-creator">CREATOR</span>
-        </span>
+        <span class="logo-title">AI <span class="logo-creator">CREATOR</span></span>
         <span class="logo-name">アキフル</span>
       </a>
 
-      <nav class="nav" aria-label="サイト内ナビゲーション">
+      <nav class="nav" aria-label="Primary">
+        <a href="#services">SERVICES</a>
         <a href="#about">ABOUT</a>
         <a href="#works">WORKS</a>
       </nav>
@@ -357,15 +355,20 @@
   </header>
 
   <main>
-    <!-- HERO -->
+    <!-- Hero -->
     <section id="home" class="hero">
       <div class="container">
         <div class="hero-content">
           <h1 class="hero-title">あなたのサービスを、AI×クリエイティブで「伝わる映像」</h1>
 
           <p class="hero-text">
-            AIを使いながらも、人の感覚を置き去りにしない制作を大切にしています。<br>
-            大切にしているのは、情報の量ではなく「伝わること」。受け手にしっかり届くまで、丁寧に整えます。
+            AIを使いながらも、人の感覚を置き去りにしない制作を大切にしています。AIでの文章作成や映像制作に対応しています。
+          </p>
+          <p class="hero-text">
+            大切にしているのは、情報の量ではなく「伝わること」。
+          </p>
+          <p class="hero-text">
+            受け手にしっかり届くまで、丁寧に整えます。
           </p>
 
           <a href="#works" class="btn btn-gradient">制作の雰囲気を見る</a>
@@ -373,7 +376,40 @@
       </div>
     </section>
 
-    <!-- ABOUT -->
+    <!-- Services -->
+    <section id="services" class="services">
+      <div class="container">
+        <h2 class="section-title">SERVICES</h2>
+
+        <div class="services-grid">
+          <div class="service-card">
+            <div class="service-icon">✍️</div>
+            <h3>AIライティング</h3>
+            <p>情報をただ並べるのではなく、誰に・どんな場面で届くのかを意識しながら、読み手の心に無理なく届く文章を丁寧に整えます。</p>
+          </div>
+
+          <div class="service-card">
+            <div class="service-icon">🎨</div>
+            <h3>AI画像作成</h3>
+            <p>世界観や空気感を大切にしながら、見た瞬間に伝わるビジュアルを制作します。サムネイルやバナー制作にも対応しています。</p>
+          </div>
+
+          <div class="service-card">
+            <div class="service-icon">🎬</div>
+            <h3>AI動画作成</h3>
+            <p>テキストからの動画生成や、静かな余白を活かした映像表現で、視覚的な「伝わりやすさ」を重視します。</p>
+          </div>
+
+          <div class="service-card">
+            <div class="service-icon">✂️</div>
+            <h3>動画編集</h3>
+            <p>強い演出に頼らず、流れや間を意識した編集で、観る人が自然に引き込まれる構成を心がけています。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About -->
     <section id="about" class="about">
       <div class="container">
         <div class="about-image">
@@ -383,100 +419,102 @@
         <div class="about-text">
           <h2>ABOUT</h2>
           <h3>「伝わるかどうか」は、人の感覚が決める</h3>
+
           <p>AIの進化によって、文章や映像を作ること自体は、以前よりずっと簡単になりました。</p>
           <p>それでも、「相手にどう伝わるか」「どんな感情が残るか」は、人の感覚に委ねられる部分だと考えています。だからこそ、速さや量よりも、受け手の視点に立ち、丁寧に整えることを大切にしています。</p>
         </div>
       </div>
     </section>
 
-    <!-- WORKS -->
+    <!-- Works -->
     <section id="works" class="works">
       <div class="container">
         <h2 class="section-title">WORKS</h2>
+        <ul class="works-tabs"></ul>
 
-        <p class="lead">
-          これまでに制作した一部をご紹介します。<br>
+        <p class="works-intro">
+          これまでに制作した一部をご紹介します。<br />
           すべて「どう伝わるか」を軸に組み立てたものです。
         </p>
 
         <div class="works-grid">
-          <!-- 1: 動画（grandpa） -->
-          <article class="work-card">
+          <!-- 1 -->
+          <div class="work-card">
             <div class="work-item">
               <video controls playsinline preload="metadata" poster="thumb_grandpa.png">
-                <source src="portfolio_grandpa_surprise_5sec.mov" type="video/quicktime">
+                <source src="portfolio_grandpa_surprise_5sec.mov" type="video/quicktime" />
               </video>
             </div>
             <div class="work-caption">
               <h3>やさしいトーンの映像構成</h3>
               <p>強い演出に頼らず、表情や間の変化を丁寧に拾い、観る人の感情が自然に重なる流れを意識しています。</p>
             </div>
-          </article>
+          </div>
 
-          <!-- 2: 動画（水彩少女） -->
-          <article class="work-card">
+          <!-- 2 -->
+          <div class="work-card">
             <div class="work-item">
               <video controls playsinline preload="metadata" poster="portfolio_watercolor_girl_5sec.png">
-                <source src="portfolio_watercolor_girl_5sec.mp4" type="video/mp4">
+                <source src="portfolio_watercolor_girl_5sec.mp4" type="video/mp4" />
               </video>
             </div>
             <div class="work-caption">
               <h3>水彩調ビジュアルのワンカット映像</h3>
               <p>懐かしさや記憶に触れる空気感を大切にし、観る人それぞれが物語を重ねられる余白を残しています。</p>
             </div>
-          </article>
+          </div>
 
-          <!-- 3: 画像（バナー・サムネ） -->
-          <article class="work-card">
+          <!-- 3 -->
+          <div class="work-card">
             <div class="work-item">
-              <img src="banner_stack.png" alt="AI画像作品（バナー・サムネイル例）">
+              <img src="banner_stack.png" alt="AI画像作品（バナー・サムネイル例）" />
             </div>
             <div class="work-caption">
               <h3>余白を活かしたビジュアル表現</h3>
               <p>情報を詰め込みすぎず、色と余白のバランスで「一瞬で伝わる」設計に整えています。</p>
             </div>
-          </article>
+          </div>
 
-          <!-- 4: 画像（テイスト作例） -->
-          <article class="work-card">
+          <!-- 4 -->
+          <div class="work-card">
             <div class="work-item">
-              <img src="sunflower.jpg" alt="AI画像作品（テイスト作例）">
+              <img src="sunflower.jpg" alt="AI画像作品（テイスト作例）" />
             </div>
             <div class="work-caption">
               <h3>現実の延長にある、非日常の一瞬</h3>
               <p>強いインパクトよりも、見終わったあとに静かに残る印象を大切にしています。</p>
             </div>
-          </article>
+          </div>
 
-          <!-- 5: 動画（SNS構成サンプル） -->
-          <article class="work-card">
+          <!-- 5 -->
+          <div class="work-card">
             <div class="work-item">
-              <video controls playsinline preload="metadata" poster="thumb_veo.png">
-                <source src="veo3.1.mov" type="video/quicktime">
+              <video controls playsinline muted preload="metadata" poster="thumb_veo.png">
+                <source src="veo3.1.mov" type="video/quicktime" />
               </video>
             </div>
             <div class="work-caption">
               <h3>SNS向けショート動画（構成サンプル）</h3>
               <p>強い煽りに頼らず、テンポと余白で引き込み、自然に最後まで見てもらえる流れを意識しています。</p>
             </div>
-          </article>
+          </div>
 
-          <!-- 6: 画像（スマホ） -->
-          <article class="work-card">
+          <!-- 6 -->
+          <div class="work-card">
             <div class="work-item">
-              <img src="smartphone.jpg" alt="スマートフォンのビジュアル">
+              <img src="smartphone.jpg" alt="スマートフォンのビジュアル" />
             </div>
             <div class="work-caption">
               <h3>日常に寄り添うワンシーン表現</h3>
               <p>冷たさを感じさせない光と空気感で、観る人が自分の記憶や感情を重ねられる余白を残しています。</p>
             </div>
-          </article>
+          </div>
         </div>
       </div>
     </section>
   </main>
 
-  <footer>
+  <footer class="footer">
     <div class="container">
       <p><small>© 2026 アキフル（AI CREATOR）. All Rights Reserved.</small></p>
     </div>
