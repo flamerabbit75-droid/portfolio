@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI CREATOR Portfolio</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet" />
+
+  <style>
+    /* =========================
+       基本設定
+    ========================= */
+    :root {
+      --primary-color: #4e7df5;
+      --secondary-color: #a768f6;
+      --text-color: #333333;
+      --text-light: #666666;
+      --bg-white: #ffffff;
+      --bg-light: #f8f9fa;
+      --gradient-main: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      font-family: "Noto Sans JP", sans-serif;
+      margin: 0;
+      padding: 0;
+      color: var(--text-color);
+      background: var(--bg-white);
+      line-height: 1.7;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+      transition: color 0.3s ease;
+    }
+
+    h1, h2, h3 { margin: 0; font-weight: 700; }
+    p { margin: 0 0 1.2em; }
+
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    section { padding: 80px 0; }
+
+    /* セクションタイトル */
+    .section-title {
+      text-align: center;
+      font-size: 2.5rem;
+      margin-bottom: 60px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--primary-color);
+    }
+
+    /* ボタン */
+    .btn {
+      display: inline-block;
+      padding: 12px 36px;
+      border-radius: 50px;
+      font-weight: 700;
+      text-align: center;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .btn-gradient {
+      background: var(--gradient-main);
+      color: #fff;
+      box-shadow: 0 4px 15px rgba(78, 125, 245, 0.3);
+    }
+
+    .btn-gradient:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(78, 125, 245, 0.4);
+      color: #fff;
+    }
+
+    /* =========================
+       ヘッダー
+    ========================= */
+    .header {
+      position: absolute;
+      top: 0;
+      width: 100%;
+      z-index: 100;
+      padding: 20px 0;
+    }
+
+    .header .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+
+    /* ロゴ（AI CREATOR + アキフル） */
+    .logo {
+      display: inline-flex;
+      flex-direction: column;
+      gap: 4px;
+      line-height: 1.1;
+    }
+
+    .logo-title {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--primary-color); /* AI を青 */
+    }
+
+    .logo-title .logo-creator {
+      color: var(--text-color); /* CREATOR を黒 */
+    }
+
+    .logo-name {
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: var(--text-light); /* 薄いグレー */
+    }
+
+    /* ナビ */
+    .nav {
+      display: flex;
+      gap: 28px;
+      align-items: center;
+    }
+
+    .nav a {
+      font-size: 0.95rem;
+      font-weight: 500;
+      color: var(--text-light);
+      position: relative;
+      padding: 6px 2px;
+    }
+
+    .nav a:hover { color: var(--primary-color); }
+
+    .nav a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0px;
+      width: 0%;
+      height: 2px;
+      background: var(--primary-color);
+      transition: width 0.25s ease;
+    }
+
+    .nav a:hover::after { width: 100%; }
+
+    /* =========================
+       ヒーロー
+    ========================= */
+    .hero {
+      padding: 180px 0 100px;
+      position: relative;
+
+      background-image:
+        linear-gradient(
+          90deg,
+          rgba(255,255,255,0.95) 0%,
+          rgba(255,255,255,0.88) 45%,
+          rgba(255,255,255,0.45) 70%,
+          rgba(255,255,255,0.00) 100%
+        ),
+        url("./hero_rabbit.png");
+
+      background-repeat: no-repeat, no-repeat;
+      background-position: left center, right center;
+      background-size: cover, contain;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      max-width: 640px;
+    }
+
+    .hero-title {
+      font-size: 3.2rem;
+      line-height: 1.2;
+      margin-bottom: 18px;
+    }
+
+    .hero-text {
+      font-size: 1.05rem;
+      color: var(--text-light);
+      margin-bottom: 28px;
+    }
+
+    /* =========================
+       ABOUT
+    ========================= */
+    #about .container {
+      display: flex;
+      align-items: center;
+      gap: 120px;
+    }
+
+    .about-image { flex: 1; display: flex; justify-content: center; }
+
+    .about-image-layer {
+      width: 100%;
+      max-width: 420px;
+      height: 350px;
+
+      background-image: url("./about-working-rabbit.jpg");
+      background-repeat: no-repeat;
+      background-position: center 40px;
+      background-size: 115%;
+
+      transform: translateY(-6px);
+      box-shadow: 0 18px 30px rgba(0,0,0,0.08);
+      opacity: 0.65;
+      border-radius: 18px;
+    }
+
+    .about-text { flex: 1; }
+
+    .about-text h2 {
+      color: var(--primary-color);
+      font-size: 1.2rem;
+      letter-spacing: 0.08em;
+      margin-bottom: 10px;
+    }
+
+    .about-text h3 {
+      font-size: 1.35rem;
+      margin-bottom: 14px;
+    }
+
+    .about-text p {
+      color: var(--text-light);
+      margin-bottom: 1.2em;
+    }
+
+    /* =========================
+       WORKS
+    ========================= */
+    #works .lead {
+      max-width: 720px;
+      margin: 0 auto 30px;
+      color: var(--text-light);
+      text-align: left;
+    }
+
+    /* ✅ ここをgrid固定にして「巨大な横長が出る」崩れを防ぐ */
+    .works-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+    }
+
+    .work-card {
+      background: var(--bg-white);
+      border-radius: 16px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      min-width: 0;
+    }
+
+    .work-item {
+      position: relative;
+      aspect-ratio: 4 / 3;
+      background: #eee;
+      overflow: hidden;
+    }
+
+    .work-item > img,
+    .work-item > video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .work-caption { padding: 16px 20px 20px; }
+
+    .work-caption h3 {
+      font-size: 1rem;
+      margin-bottom: 8px;
+    }
+
+    .work-caption p {
+      margin: 0;
+      font-size: 0.85rem;
+      color: var(--text-light);
+    }
+
+    /* =========================
+       フッター
+    ========================= */
+    footer {
+      text-align: center;
+      padding: 30px 0;
+      background: var(--bg-light);
+      color: var(--text-light);
+      font-size: 0.9rem;
+    }
+
+    /* =========================
+       レスポンシブ
+    ========================= */
+    @media (max-width: 992px) {
+      .hero-title { font-size: 2.6rem; }
+      #about .container { flex-direction: column; text-align: center; gap: 40px; }
+      .works-grid { grid-template-columns: repeat(2, 1fr); }
+      #works .lead { text-align: center; }
+    }
+
+    @media (max-width: 768px) {
+      .header .container { padding: 0 10px; }
+      .nav { display: none; } /* スマホは非表示（静かな1P設計） */
+      .hero { padding: 140px 0 70px; }
+      .hero-title { font-size: 2rem; }
+      .works-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- ヘッダー -->
+  <header class="header">
+    <div class="container">
+      <a href="#home" class="logo">
+        <span class="logo-title">
+          AI <span class="logo-creator">CREATOR</span>
+        </span>
+        <span class="logo-name">アキフル</span>
+      </a>
+
+      <nav class="nav" aria-label="サイト内ナビゲーション">
+        <a href="#about">ABOUT</a>
+        <a href="#works">WORKS</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section id="home" class="hero">
+      <div class="container">
+        <div class="hero-content">
+          <h1 class="hero-title">あなたのサービスを、AI×クリエイティブで「伝わる映像」</h1>
+
+          <p class="hero-text">
+            AIを使いながらも、人の感覚を置き去りにしない制作を大切にしています。<br>
+            大切にしているのは、情報の量ではなく「伝わること」。受け手にしっかり届くまで、丁寧に整えます。
+          </p>
+
+          <a href="#works" class="btn btn-gradient">制作の雰囲気を見る</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="about">
+      <div class="container">
+        <div class="about-image">
+          <div class="about-image-layer" role="img" aria-label="AI CREATOR ロボウサギ"></div>
+        </div>
+
+        <div class="about-text">
+          <h2>ABOUT</h2>
+          <h3>「伝わるかどうか」は、人の感覚が決める</h3>
+          <p>AIの進化によって、文章や映像を作ること自体は、以前よりずっと簡単になりました。</p>
+          <p>それでも、「相手にどう伝わるか」「どんな感情が残るか」は、人の感覚に委ねられる部分だと考えています。だからこそ、速さや量よりも、受け手の視点に立ち、丁寧に整えることを大切にしています。</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- WORKS -->
+    <section id="works" class="works">
+      <div class="container">
+        <h2 class="section-title">WORKS</h2>
+
+        <p class="lead">
+          これまでに制作した一部をご紹介します。<br>
+          すべて「どう伝わるか」を軸に組み立てたものです。
+        </p>
+
+        <div class="works-grid">
+          <!-- 1: 動画（grandpa） -->
+          <article class="work-card">
+            <div class="work-item">
+              <video controls playsinline preload="metadata" poster="thumb_grandpa.png">
+                <source src="portfolio_grandpa_surprise_5sec.mov" type="video/quicktime">
+              </video>
+            </div>
+            <div class="work-caption">
+              <h3>やさしいトーンの映像構成</h3>
+              <p>強い演出に頼らず、表情や間の変化を丁寧に拾い、観る人の感情が自然に重なる流れを意識しています。</p>
+            </div>
+          </article>
+
+          <!-- 2: 動画（水彩少女） -->
+          <article class="work-card">
+            <div class="work-item">
+              <video controls playsinline preload="metadata" poster="portfolio_watercolor_girl_5sec.png">
+                <source src="portfolio_watercolor_girl_5sec.mp4" type="video/mp4">
+              </video>
+            </div>
+            <div class="work-caption">
+              <h3>水彩調ビジュアルのワンカット映像</h3>
+              <p>懐かしさや記憶に触れる空気感を大切にし、観る人それぞれが物語を重ねられる余白を残しています。</p>
+            </div>
+          </article>
+
+          <!-- 3: 画像（バナー・サムネ） -->
+          <article class="work-card">
+            <div class="work-item">
+              <img src="banner_stack.png" alt="AI画像作品（バナー・サムネイル例）">
+            </div>
+            <div class="work-caption">
+              <h3>余白を活かしたビジュアル表現</h3>
+              <p>情報を詰め込みすぎず、色と余白のバランスで「一瞬で伝わる」設計に整えています。</p>
+            </div>
+          </article>
+
+          <!-- 4: 画像（テイスト作例） -->
+          <article class="work-card">
+            <div class="work-item">
+              <img src="sunflower.jpg" alt="AI画像作品（テイスト作例）">
+            </div>
+            <div class="work-caption">
+              <h3>現実の延長にある、非日常の一瞬</h3>
+              <p>強いインパクトよりも、見終わったあとに静かに残る印象を大切にしています。</p>
+            </div>
+          </article>
+
+          <!-- 5: 動画（SNS構成サンプル） -->
+          <article class="work-card">
+            <div class="work-item">
+              <video controls playsinline preload="metadata" poster="thumb_veo.png">
+                <source src="veo3.1.mov" type="video/quicktime">
+              </video>
+            </div>
+            <div class="work-caption">
+              <h3>SNS向けショート動画（構成サンプル）</h3>
+              <p>強い煽りに頼らず、テンポと余白で引き込み、自然に最後まで見てもらえる流れを意識しています。</p>
+            </div>
+          </article>
+
+          <!-- 6: 画像（スマホ） -->
+          <article class="work-card">
+            <div class="work-item">
+              <img src="smartphone.jpg" alt="スマートフォンのビジュアル">
+            </div>
+            <div class="work-caption">
+              <h3>日常に寄り添うワンシーン表現</h3>
+              <p>冷たさを感じさせない光と空気感で、観る人が自分の記憶や感情を重ねられる余白を残しています。</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p><small>© 2026 アキフル（AI CREATOR）. All Rights Reserved.</small></p>
+    </div>
+  </footer>
+</body>
+</html>
