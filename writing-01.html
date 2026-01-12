@@ -8,221 +8,184 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet" />
   <style>
-body{
-  font-family:"Noto Sans JP",sans-serif;
-  background:#f8f9fa;
-  color:#333;
-  line-height:1.8;
-}
+    /* ===== Base & Variables ===== */
+    :root{
+      --primary:#4e7df5;
+      --secondary:#a768f6;
+      --text:#333;
+      --muted:#666;
+      --bg:#f8f9fa;
+      --card:#ffffff;
+      --shadow: 0 10px 30px rgba(0,0,0,0.06);
+      --radius: 18px;
+    }
 
-/* コンテナ */
-.lp-wrap{
-  max-width: 920px;
-  margin: 0 auto;
-  padding: 48px 20px 80px;
-}
+    body{
+      font-family:"Noto Sans JP",sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.85;
+      margin: 0;
+    }
 
-/* 戻るボタン */
-.back-link{
-  display:inline-block;
-  margin-bottom: 18px;
-  padding:10px 14px;
-  border-radius: 999px;
-  background:#fff;
-  box-shadow:0 6px 18px rgba(0,0,0,0.06);
-  font-weight:700;
-  color:#4e7df5;
-}
+    /* ===== Layout Containers ===== */
+    .lp-wrap{
+      max-width: 920px;
+      margin: 0 auto;
+      padding: 44px 20px 84px;
+    }
 
-/* ヒーロー */
-.lp-hero{
-  background:#fff;
-  border-radius:18px;
-  box-shadow:0 10px 30px rgba(0,0,0,0.06);
-  padding: 26px 26px 22px;
-  margin-bottom: 18px;
-}
-.lp-title{
-  font-size: 26px;
-  line-height:1.25;
-  margin:0 0 8px;
-}
-.lp-lead{
-  color:#666;
-  margin:0 0 14px;
-}
+    .lp-container{
+      max-width: 760px;
+      margin: 0 auto;
+    }
 
-/* CTAボタン */
-.lp-cta{
-  display:inline-block;
-  padding:12px 18px;
-  border-radius:999px;
-  background: linear-gradient(135deg,#4e7df5,#a768f6);
-  color:#fff;
-  font-weight:700;
-}
+    /* ===== Navigation ===== */
+    .back-link{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      margin-bottom: 18px;
+      padding:10px 14px;
+      border-radius: 999px;
+      background: var(--card);
+      box-shadow: var(--shadow);
+      font-weight: 700;
+      color: var(--primary);
+      text-decoration: none;
+      transition: transform 0.2s ease;
+    }
+    .back-link:hover{
+      transform: translateY(-2px);
+    }
 
-/* 本文カード */
-.lp-card{
-  background:#fff;
-  border-radius:18px;
-  box-shadow:0 10px 30px rgba(0,0,0,0.06);
-  padding: 26px;
-}
+    /* ===== Hero Section ===== */
+    .lp-hero{
+      background: var(--card);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 26px 26px 22px;
+      margin-bottom: 18px;
+    }
 
-/* 見出し */
-.lp-card h2{
-  font-size: 18px;
-  margin: 22px 0 10px;
-}
-.lp-card ul{
-  margin: 10px 0 0;
-  padding-left: 18px;
-}
+    .lp-title{
+      font-size: clamp(22px, 2.2vw, 28px);
+      line-height: 1.25;
+      margin: 0 0 10px;
+      font-weight: 700;
+    }
 
-/* ===== LP 1.5（最小整形＋ちょい魅せ） ===== */
-:root{
-  --primary:#4e7df5;
-  --secondary:#a768f6;
-  --text:#333;
-  --muted:#666;
-  --bg:#f8f9fa;
-  --card:#fff;
-  --shadow: 0 10px 30px rgba(0,0,0,0.06);
-  --radius: 18px;
-}
+    .lp-lead{
+      color: var(--muted);
+      margin: 0 0 14px;
+      font-size: 0.95rem;
+    }
 
-body{
-  font-family:"Noto Sans JP",sans-serif;
-  background: var(--bg);
-  color: var(--text);
-  line-height: 1.85;
-}
+    /* CTA Area */
+    .lp-cta-row{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      align-items:center;
+      margin-top: 16px;
+    }
 
-.lp-wrap{
-  max-width: 920px;
-  margin: 0 auto;
-  padding: 44px 20px 84px;
-}
+    .lp-cta{
+      display:inline-block;
+      padding:12px 24px;
+      border-radius: 999px;
+      background: linear-gradient(135deg,var(--primary),var(--secondary));
+      color:#fff;
+      font-weight: 700;
+      text-decoration: none;
+      box-shadow: 0 4px 12px rgba(78, 125, 245, 0.3);
+      transition: transform 0.2s ease;
+    }
+    .lp-cta:hover{
+      transform: translateY(-2px);
+    }
 
-/* 上部の戻る導線 */
-.back-link{
-  display:inline-flex;
-  align-items:center;
-  gap:8px;
-  margin-bottom: 18px;
-  padding:10px 14px;
-  border-radius: 999px;
-  background: var(--card);
-  box-shadow: var(--shadow);
-  font-weight: 700;
-  color: var(--primary);
-}
+    .lp-subnote{
+      color: var(--muted);
+      font-size: 0.85rem;
+    }
 
-/* ヒーロー（第一印象の改善ポイント） */
-.lp-hero{
-  background: var(--card);
-  border-radius: var(--radius);
-  box-shadow: var(--shadow);
-  padding: 26px 26px 22px;
-  margin-bottom: 18px;
-}
+    /* ===== Content Card ===== */
+    .lp-card{
+      background: var(--card);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 40px; /* 余白を少し広めに調整 */
+    }
 
-.lp-title{
-  font-size: clamp(22px, 2.2vw, 28px);
-  line-height: 1.25;
-  margin: 0 0 10px;
-}
+    .lp-card h2{
+      font-size: 1.2rem;
+      margin: 32px 0 16px;
+      padding-top: 10px;
+      border-top: 1px solid rgba(0,0,0,0.06);
+      color: var(--primary);
+    }
+    /* 最初の要素のボーダーは消す */
+    .lp-card > *:first-child {
+      margin-top: 0;
+    }
 
-.lp-lead{
-  color: var(--muted);
-  margin: 0 0 14px;
-}
+    .lp-card p{
+      margin: 0 0 1.2em;
+    }
+    
+    .lp-card strong {
+      background: linear-gradient(transparent 70%, #e2e8fe 70%);
+    }
 
-/* CTA（押せる体裁だけ作る） */
-.lp-cta-row{
-  display:flex;
-  flex-wrap:wrap;
-  gap:10px;
-  align-items:center;
-}
+    .lp-card ul{
+      margin: 10px 0 24px;
+      padding-left: 1.4em;
+      color: var(--text);
+    }
+    .lp-card li{
+      margin: 8px 0;
+    }
 
-.lp-cta{
-  display:inline-block;
-  padding:12px 18px;
-  border-radius: 999px;
-  background: linear-gradient(135deg,var(--primary),var(--secondary));
-  color:#fff;
-  font-weight: 700;
-}
+    .note {
+      margin-top: 24px;
+      padding: 12px;
+      background: #f0f2f5;
+      border-radius: 8px;
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
 
-.lp-subnote{
-  color: var(--muted);
-  font-size: 0.95rem;
-}
-
-/* 本文カード */
-.lp-card{
-  background: var(--card);
-  border-radius: var(--radius);
-  box-shadow: var(--shadow);
-  padding: 26px;
-}
-
-/* 文章を“サンプル”っぽく見せない微調整 */
-.lp-card h2{
-  font-size: 1.05rem;
-  margin: 22px 0 10px;
-  padding-top: 6px;
-  border-top: 1px solid rgba(0,0,0,0.06);
-}
-.lp-card p{ margin: 0 0 12px; }
-.lp-card ul{ margin: 10px 0 0; padding-left: 18px; }
-.lp-card li{ margin: 6px 0; }
-
-@media (max-width: 600px){
-  .lp-hero, .lp-card{ padding: 18px; }
-}
-/* ===== LPページ用レイアウト調整 ===== */
-.lp-container{
-  max-width: 760px;          /* ← ビチビチ回避の核心 */
-  margin: 0 auto;            /* ← 中央寄せ */
-  padding: 0 24px 80px;      /* ← 左右と下の余白 */  </style>
+    /* Responsive */
+    @media (max-width: 600px){
+      .lp-hero, .lp-card{ padding: 20px; }
+      .lp-wrap { padding: 20px 16px 60px; }
+    }
+  </style>
 </head>
 <body>
+
   <div class="lp-wrap">
-    <a class="back-link" href="./index.html">← Back to Portfolio</a>
+    <!-- 戻るボタン -->
+    <a href="index.html#works" class="back-link">← Back to WORKS</a>← Back to Portfolio</a>
 
-<div class="lp-container">
-    <section class="lp-hero">
-      <h1 class="lp-title">Writing Sample 01｜フィルムカメラ初心者向けLPコピー</h1>
-      <p class="lp-lead">
-        ※本ページは「AIライティングの構成力・文章トーン」を確認いただくためのサンプルです。
-      </p>
+    <div class="lp-container">
+      <!-- ヒーローエリア（タイトル＋メタ情報） -->
+      <section class="lp-hero">
+        <h1 class="lp-title">Writing Sample 01｜フィルムカメラ初心者向けLPコピー</h1>
+        <p class="lp-lead">
+          ※本ページは「AIライティングの構成力・文章トーン」を確認いただくためのサンプルです。<br>
+          想定：個人写真店（現像受付・フィルム購入・使い方相談）
+        </p>
 
-      <div class="lp-cta-row">
-        <a class="lp-cta" href="mailto:yourmail@example.com">相談する（仮）</a>
-        <span class="lp-subnote">※実案件では店名・料金・導線（予約/LINE）に合わせて調整します。</span>
-      </div>
-    </section>
+        <div class="lp-cta-row">
+          <a class="lp-cta" href="mailto:yourmail@example.com">相談する（仮）</a>
+          <span class="lp-subnote">※実案件では予約フォームやLINE等へ誘導</span>
+        </div>
+      </section>
 
-    <section class="lp-card">
-      <!-- ここに、今の本文をそのまま貼り付け -->
-    </section>
-  </div>
-</body>
-  <header>
-    <div class="container">
-      <a href="index.html">← Back to Portfolio</a>
-    </div>
-  </header>
-
-  <main>
-    <div class="container">
-      <h1>Writing Sample 01｜フィルムカメラ初心者向けLPコピー</h1>
-      <div class="meta">※サンプル（架空案件）／想定：個人写真店（現像受付・フィルム購入・使い方相談）</div>
-
-      <div class="card" style="margin-top:18px;">
+      <!-- 本文エリア（修正したコンテンツをカード内に配置） -->
+      <section class="lp-card">
         <p><strong>はじめてのフィルムカメラ、最初の1本がいちばん不安。</strong></p>
 
         <p>「ちゃんと写るかな」<br>
@@ -248,15 +211,15 @@ body{
           <li>スマホでは出ない“空気”を写真に残したい</li>
         </ul>
 
-        <p style="margin-top:18px;"><strong>焦らなくて大丈夫です。</strong><br>
+        <p style="margin-top:32px;"><strong>焦らなくて大丈夫です。</strong><br>
         最初の1本が、ちゃんと“好きな写真”になるように整えます。</p>
 
-        <p><strong>👉 相談してから決めたい方へ：</strong>まずは5分だけ、今の状況を教えてください。</p>
+        <p><strong>👉 相談してから決めたい方へ：</strong><br>まずは5分だけ、今の状況を教えてください。</p>
 
-        <div class="note">掲載用途に合わせて、店名・料金・導線（予約フォーム/LINE）を差し替えると完成します。</div>
-        </div>
-      </div>
+        <div class="note">※掲載用途に合わせて、店名・料金・導線（予約フォーム/LINE）を差し替えると完成します。</div>
+      </section>
     </div>
-  </main>
+  </div>
+
 </body>
 </html>
