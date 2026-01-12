@@ -55,10 +55,12 @@
     h1,h2,h3{ margin:0; font-weight:700; }
     p{ margin:0 0 1.0em; }
 
+    /* ★壊れていた .container を修正（最重要） */
     .container{
-      width:90%;
-      max-width:1200px;
-      margin:0 auto;
+      width: 90%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px; /* 端がパツパツ防止（PC/スマホ共通） */
     }
 
     section{ padding:80px 0; }
@@ -106,6 +108,7 @@
       top:0;
       z-index:100;
     }
+    /* flex は header 本体ではなく「中の container」に当てる */
     .header .container{
       display:flex;
       justify-content:space-between;
@@ -177,7 +180,6 @@
     .hero-content{ max-width:620px; }
     .hero-title{
       font-size:3.2rem;
-      line-height:1.2;
       margin:0 0 18px;
     }
     .hero-text{
@@ -188,12 +190,24 @@
     .hero-text:last-of-type{ margin-bottom:34px; }
 
     /* ========= About ========= */
+    /* 横並びの親は .about .container */
     .about .container{
       display:flex;
       align-items:center;
       gap:90px;
     }
-    .about-image{ flex:1; display:flex; justify-content:center; }
+
+    /* 画像とテキストの幅バランス */
+    .about-image{
+      flex:0 0 420px;
+      display:flex;
+      justify-content:center;
+    }
+    .about-text{
+      flex:1;
+      min-width:0;
+    }
+
     .about-image-layer{
       width:100%;
       max-width:420px;
@@ -206,7 +220,7 @@
       box-shadow:0 18px 30px rgba(0,0,0,0.08);
       opacity:.65;
     }
-    .about-text{ flex:1; }
+
     .about-text h2{
       margin:0 0 10px;
       font-size:2rem;
@@ -259,89 +273,78 @@
     }
 
     .works-grid{
-  display:flex;
-  flex-wrap:wrap;
-  gap:30px;
-}
+      display:flex;
+      flex-wrap:wrap;
+      gap:30px;
+    }
 
-/* work-card は div でも a でも共通で使う */
-.work-card{
-  background:var(--bg-white);
-  border-radius:16px;
-  box-shadow:0 5px 15px rgba(0,0,0,0.08);
-  overflow:hidden;
-  display:flex;
-  flex-direction:column;
-  flex:1 1 calc(33.333% - 20px);
-  max-width:calc(33.333% - 20px);
-  color:inherit;
-  text-decoration:none;
-}
+    .work-card{
+      background:var(--bg-white);
+      border-radius:16px;
+      box-shadow:0 5px 15px rgba(0,0,0,0.08);
+      overflow:hidden;
+      display:flex;
+      flex-direction:column;
+      flex:1 1 calc(33.333% - 20px);
+      max-width:calc(33.333% - 20px);
+      color:inherit;
+      text-decoration:none;
+    }
 
-.work-card.work-card-link{
-  cursor:pointer;
-  transition:transform .2s ease, box-shadow .2s ease;
-}
-.work-card.work-card-link:hover{
-  transform:translateY(-4px);
-  box-shadow:0 10px 24px rgba(0,0,0,0.10);
-}
+    .work-card.work-card-link{
+      cursor:pointer;
+      transition:transform .2s ease, box-shadow .2s ease;
+    }
+    .work-card.work-card-link:hover{
+      transform:translateY(-4px);
+      box-shadow:0 10px 24px rgba(0,0,0,0.10);
+    }
 
-/* 比率はここ（work-item）で一元管理 */
-.work-item{
-  position:relative;
-  aspect-ratio:4/3;
-  background:#eee;
-  overflow:hidden;
+    .work-item{
+      position:relative;
+      aspect-ratio:4/3;
+      background:#eee;
+      overflow:hidden;
+      box-shadow: inset 0 -1px 0 rgba(0,0,0,0.06);
+    }
 
-  /* 線が薄くて見えない問題は、影で“段差”を作る */
-  box-shadow: inset 0 -1px 0 rgba(0,0,0,0.06);
-}
+    .work-item > img,
+    .work-item > video{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      display:block;
+      transform:scale(1.001);
+    }
 
-.work-item > img,
-.work-item > video{
-  width:100%;
-  height:100%;
-  object-fit:cover;
-  display:block;
-  transform:scale(1.001);
-}
+    .work-caption{
+      padding:16px 20px 20px;
+      background:#fff;
+      border-top:1px solid rgba(0,0,0,0.08);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.6);
+    }
+    .work-caption h3{
+      font-size:1rem;
+      margin:0 0 8px;
+    }
+    .work-caption p{
+      margin:0;
+      font-size:.85rem;
+      color:var(--text-light);
+    }
 
-.work-caption{
-  padding:16px 20px 20px;
-  background:#fff;
+    .work-item video{
+      position:relative;
+      z-index:2;
+      pointer-events:auto;
+    }
 
-  /* 区切り線（上側） */
-  border-top:1px solid rgba(0,0,0,0.08);
-
-  /* 線を自然に馴染ませるための内側シャドウ */
-  box-shadow: inset 0 1px 0 rgba(255,255,255,0.6);
-}
-.work-caption h3{
-  font-size:1rem;
-  margin:0 0 8px;
-}
-.work-caption p{
-  margin:0;
-  font-size:.85rem;
-  color:var(--text-light);
-}
-
-/* videoクリック対策（念のため） */
-.work-item video{
-  position:relative;
-  z-index:2;
-  pointer-events:auto;
-}
-
-/* ========= Thumb（ここだけ触ればOK / 1セットのみ） ========= */
-    /* thumbは work-item にピッタリ貼り付く（比率は持たせない） */
+    /* ========= Thumb ========= */
     .thumb{
       position:absolute;
       inset:0;
-      border-radius:0; /* work-item が既に丸いので、二重丸み回避 */
+      border-radius:0;
       overflow:hidden;
-
       background-image:url("./html_bg.png");
       background-size:cover;
       background-position:center;
@@ -373,7 +376,6 @@
       font-size:clamp(18px, 1.7vw, 24px);
       line-height:1.2;
       letter-spacing:0.02em;
-
       display:-webkit-box;
       -webkit-line-clamp:2;
       -webkit-box-orient:vertical;
@@ -384,7 +386,6 @@
       margin:0;
       font-size:clamp(13px, 1.2vw, 16px);
       color:#555;
-
       display:-webkit-box;
       -webkit-line-clamp:2;
       -webkit-box-orient:vertical;
@@ -395,28 +396,49 @@
       margin:0;
       font-size:clamp(12px, 1.1vw, 14px);
       color:#555;
-
       display:-webkit-box;
       -webkit-line-clamp:2;
       -webkit-box-orient:vertical;
       overflow:hidden;
     }
 
-/* ========= Responsive ========= */
+    /* ========= Responsive ========= */
     @media (max-width: 992px){
       .hero-title{ font-size:2.8rem; }
       .services-grid{ grid-template-columns:repeat(2,1fr); }
-      .about .container{ flex-direction:column; text-align:center; gap:40px; }
+
+      /* ★ABOUTは .about ではなく .about .container を縦並びに */
+      .about .container{
+        flex-direction:column;
+        text-align:center;
+        gap:40px;
+      }
+      .about-image{
+        flex-basis:auto;
+        width:min(420px, 92%);
+        margin:0 auto;
+      }
+
       .work-card{ flex:1 1 calc(50% - 20px); max-width:calc(50% - 20px); }
     }
+
     @media (max-width: 768px){
-      .header .container{ padding:0 20px; }
       .nav{ display:none; }
-      .hero{ padding:140px 0 60px; }
+
+      /* トップ→ABOUTが遠い問題をここで解消 */
+      .hero{ padding:120px 0 56px; }
       .hero-title{ font-size:2rem; }
+
+      section{ padding:56px 0; }
+      .section-title{
+        margin:0 0 28px;
+        font-size:1.9rem;
+      }
+
       .services-grid{ grid-template-columns:1fr; max-width:420px; margin:0 auto; }
       .works-tabs{ flex-wrap:wrap; }
     }
+
     @media (max-width: 600px){
       .work-card{ flex:1 1 100%; max-width:100%; }
     }
@@ -615,7 +637,6 @@
             </div>
           </a>
 
-          <!-- 8: AIライティング（SEO） -->
           <a href="writing-02.html" class="work-card work-card-link" aria-label="Writing Sample 02（SEO記事）を開く">
             <div class="work-item">
               <div class="thumb">
@@ -633,7 +654,6 @@
             </div>
           </a>
 
-          <!-- 9: AIライティング（Threads） -->
           <a href="writing-03.html" class="work-card work-card-link" aria-label="Writing Sample 03（Threads投稿）を開く">
             <div class="work-item">
               <div class="thumb">
@@ -649,7 +669,8 @@
               <h3>フィルムカメラの始め方</h3>
               <p>Threads投稿（サンプル）</p>
             </div>
-          </a>        </div>
+          </a>
+        </div>
       </div>
     </section>
   </main>
