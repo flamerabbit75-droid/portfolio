@@ -1,12 +1,11 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ja">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>WORKS｜LPライティング（サンプル）｜AI CREATOR アキフル</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>WORKS｜詳細</title>
+  <meta name="description" content="制作実績の詳細ページです。" />
   <style>
-
-
     :root{
       --bg:#f6f7fb;
       --card:#ffffff;
@@ -153,9 +152,9 @@
     /* Video */
     .media{
       overflow:hidden;
-      border-radius: var(--radius);
+      border-radius:16px;
       border:1px solid var(--line);
-      background:#fff;
+      background:#000;
     }
     .media video, .media img{
       width:100%;
@@ -214,51 +213,9 @@
       text-align:center;
       font-size:.9rem;
     }
-  
-  
-
-/* writing thumb inside .media */
-.media .writing-thumb{
-  width: 100%;
-  min-height: 520px;
-  border-radius: var(--radius);
-  background: radial-gradient(1200px 500px at 20% -10%, rgba(99,102,241,.22), transparent 60%),
-              radial-gradient(900px 420px at 90% 10%, rgba(168,85,247,.18), transparent 55%),
-              #ffffff;
-  border:1px solid var(--line);
-  padding: 28px;
-  display: grid;
-  align-content: start;
-  gap: 14px;
-  box-shadow: none;
-}
-.writing-thumb .kicker2{
-  display:inline-flex; align-items:center; gap:10px;
-  font-size: 12px; font-weight: 800; letter-spacing: .08em;
-  color: #475569; text-transform: uppercase;
-}
-.writing-thumb .kicker2 .dot{
-  width:10px;height:10px;border-radius:999px;
-  background: linear-gradient(135deg, rgba(99,102,241,1), rgba(168,85,247,1));
-}
-.writing-thumb h2{
-  margin: 6px 0 0;
-  font-size: 26px;
-  line-height: 1.25;
-}
-.writing-thumb p{ margin:0; color:#334155; line-height:1.85; }
-.writing-thumb ul{ margin: 8px 0 0; padding-left: 18px; color:#334155; line-height:1.9; }
-.writing-thumb .tags{ margin-top: 8px; display:flex; flex-wrap:wrap; gap:10px; }
-.writing-thumb .tag{
-  display:inline-flex; align-items:center; gap:8px;
-  padding: 8px 12px; border-radius: 999px;
-  background: rgba(99,102,241,.08);
-  border: 1px solid rgba(99,102,241,.20);
-  color:#1e293b; font-size: 12px; font-weight: 800;
-}
-
   </style>
 </head>
+
 <body>
   <!-- Header -->
   <div class="topbar">
@@ -279,99 +236,82 @@
     <!-- Hero -->
     <section class="hero">
       <p class="kicker">WORKS</p>
-      <h1>LPライティング（サンプル）｜フィルムカメラ初心者向け</h1>
+      <h1>感情に寄り添う映像表現｜ショート動画制作サンプル</h1>
       <p class="lead">
-        本ページは、AIライティングの<strong>構成力・文章トーン</strong>を確認いただくためのサンプルです。
+      SNS広告やサービス紹介など、短時間で感情を動かす動画制作サンプルです。
       </p>
       <p class="lead">
-        想定：個人写真店（現像受付・フィルム購入・使い方相談）
+        派手な演出ではなく「表情」や「間」によって、視聴者の感情が自然に重なる流れを意識した短尺動画サンプルです。
       </p>
 
       <div class="grid">
         <!-- Left: Media -->
         <div class="card">
           <div class="media">
-            <div class="writing-thumb" role="img" aria-label="LPライティングのサンプル（文章プレビュー）">
-              <div class="kicker2"><span class="dot"></span>Writing Sample 01</div>
-              <h2>最初の1本がいちばん不安。<br>その不安、ここで一緒にほどきます。</h2>
-              <p>
-                「ちゃんと写るかな」「巻き上げって合ってる？」「現像ってどれを選べばいいの？」<br>
-                フィルムカメラは、知識より先に“体験”が大事。だからこそ、専門用語を並べるより、
-                <strong>今つまずいているところ</strong>から整理します。
-              </p>
-              <ul>
-                <li><strong>最初の1本を失敗しにくくする</strong>（装填・巻き上げ・ISO・露出の基本）</li>
-                <li><strong>撮り終わった後の不安を減らす</strong>（現像・データ化・プリントの選び方）</li>
-                <li><strong>写真に合うフィルムを提案</strong>（色・粒状感・雰囲気）</li>
-              </ul>
-              <div class="tags">
-                <span class="tag">不安→安心</span>
-                <span class="tag">短文+余白</span>
-                <span class="tag">行動導線</span>
-              </div>
-            </div>
+            <video controls playsinline preload="metadata" poster="thumb_work_grandpa.png">
+              <source src="portfolio_grandpa_surprise_5sec.mp4" type="video/mp4" />
+            </video>
           </div>
 
           <div class="meta">
             <div class="pill">
-              <div class="label">カテゴリ</div>
-              <div class="value">AIライティング（LP）</div>
+              <div class="label">想定用途</div>
+              <div class="value">ブランド紹介 / SNS広告</div>
             </div>
             <div class="pill">
-              <div class="label">目的</div>
-              <div class="value">不安をほどき、次の行動（購入/相談）につなげる</div>
+              <div class="label">尺</div>
+              <div class="value">5秒（サンプル）</div>
             </div>
             <div class="pill">
-              <div class="label">出力想定</div>
-              <div class="value">LP本文 + 見出し構成（サンプル）</div>
+              <div class="label">制作範囲</div>
+              <div class="value">構成 / 編集 / テロップ</div>
             </div>
             <div class="pill">
-              <div class="label">文章トーン</div>
-              <div class="value">短く・読みやすく・安心感のある流れ</div>
+              <div class="label">納品形式</div>
+              <div class="value">MP4（縦横対応可）</div>
             </div>
           </div>
 
-          <div class="note">
-            <p>
-              実案件では、掲載用途に合わせて <strong>店名・料金・導線（予約フォーム/LINE）</strong> を差し替えると完成します。
-            </p>
-          </div>
+          <p class="note">
+            ご依頼では、目的・尺・媒体（TikTok/YouTube/広告など）に合わせて、最適な構成をご提案します。
+          </p>
         </div>
 
-        <!-- Right: Text -->
-        <div class="card">
-          <h2>制作背景</h2>
+        <!-- Right: Description -->
+        <aside class="card">
+          <h2 class="section-title">制作背景</h2>
           <p>
-            フィルムカメラの「はじめて」は、失敗が怖くて行動が止まりやすい領域です。
-            そこで、専門知識の説明ではなく、<strong>不安の言語化 → 整理 → 次の一歩</strong>の順で、
-            気持ちが自然に前へ進む流れを優先しました。
+            強い演出や煽りに頼らず、視聴者が登場人物の感情に自然と入り込めるトーンを狙った構成です。
+            「安心感」「信頼感」「親しみ」を伝えたい場面に適しています。
           </p>
 
-          <h2>制作のポイント</h2>
+          <h2 class="section-title">制作ポイント</h2>
           <ul>
-            <li>専門用語より先に「今つまずいている場所」を言語化</li>
-            <li>否定しない：不安を肯定してから、次の一歩へ誘導</li>
-            <li>短文と余白で読み疲れを減らし、安心感を維持</li>
+            <li>表情の変化が伝わるカット選定</li>
+            <li>“間”を残して余韻が出るテンポ設計</li>
+            <li>スマホ視聴でも情報が重ならないレイアウト</li>
           </ul>
 
-          <h2>ご相談について</h2>
-          <p>
-            LP/記事/SNS投稿文など、目的に合わせて「伝わる設計」で整えます。<br>
-            まずは<strong>5分だけ</strong>、今の状況（媒体/目的/ターゲット）を教えてください。
-          </p>
+          <h2 class="section-title">対応可能な内容</h2>
+          <ul>
+            <li>SNSショート動画制作</li>
+            <li>ブランド紹介 / サービス紹介動画</li>
+            <li>既存動画の構成改善・テンポ調整</li>
+            <li>AI素材を活用した映像制作</li>
+          </ul>
 
-          <div class="cta">
-            <a class="btn btn-primary" href="index.html#contact">文章制作を相談する</a>
-          </div>
-        </div>
+          <h2 class="section-title">ご相談</h2>
+          <p>
+            ご相談・お見積りは、ページ右上の「相談する」からお気軽にどうぞ。
+            1〜2営業日以内に返信します。
+          </p>
+        </aside>
       </div>
     </section>
-  </main>
 
-  <footer class="footer">
-    <div class="container">
-      <small>© AI CREATOR アキフル　Portfolio</small>
-    </div>
-  </footer>
+    <footer>
+      © 2026 AI Creative Studio
+    </footer>
+  </main>
 </body>
 </html>

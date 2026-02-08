@@ -1,11 +1,11 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ja">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>WORKS｜LPライティング（サンプル）｜AI CREATOR アキフル</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>WORKS｜バナー・サムネ制作</title>
+  <meta name="description" content="バナー・サムネ制作の実績詳細ページです。" />
   <style>
-
 
     :root{
       --bg:#f6f7fb;
@@ -153,9 +153,9 @@
     /* Video */
     .media{
       overflow:hidden;
-      border-radius: var(--radius);
+      border-radius:16px;
       border:1px solid var(--line);
-      background:#fff;
+      background:#000;
     }
     .media video, .media img{
       width:100%;
@@ -214,51 +214,19 @@
       text-align:center;
       font-size:.9rem;
     }
-  
-  
-
-/* writing thumb inside .media */
-.media .writing-thumb{
-  width: 100%;
-  min-height: 520px;
-  border-radius: var(--radius);
-  background: radial-gradient(1200px 500px at 20% -10%, rgba(99,102,241,.22), transparent 60%),
-              radial-gradient(900px 420px at 90% 10%, rgba(168,85,247,.18), transparent 55%),
-              #ffffff;
-  border:1px solid var(--line);
-  padding: 28px;
-  display: grid;
-  align-content: start;
-  gap: 14px;
-  box-shadow: none;
+    
+    .work-item {
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+    padding: 16px;
 }
-.writing-thumb .kicker2{
-  display:inline-flex; align-items:center; gap:10px;
-  font-size: 12px; font-weight: 800; letter-spacing: .08em;
-  color: #475569; text-transform: uppercase;
+  .work-item img {
+  background: #fff;
 }
-.writing-thumb .kicker2 .dot{
-  width:10px;height:10px;border-radius:999px;
-  background: linear-gradient(135deg, rgba(99,102,241,1), rgba(168,85,247,1));
-}
-.writing-thumb h2{
-  margin: 6px 0 0;
-  font-size: 26px;
-  line-height: 1.25;
-}
-.writing-thumb p{ margin:0; color:#334155; line-height:1.85; }
-.writing-thumb ul{ margin: 8px 0 0; padding-left: 18px; color:#334155; line-height:1.9; }
-.writing-thumb .tags{ margin-top: 8px; display:flex; flex-wrap:wrap; gap:10px; }
-.writing-thumb .tag{
-  display:inline-flex; align-items:center; gap:8px;
-  padding: 8px 12px; border-radius: 999px;
-  background: rgba(99,102,241,.08);
-  border: 1px solid rgba(99,102,241,.20);
-  color:#1e293b; font-size: 12px; font-weight: 800;
-}
-
   </style>
 </head>
+
 <body>
   <!-- Header -->
   <div class="topbar">
@@ -279,99 +247,82 @@
     <!-- Hero -->
     <section class="hero">
       <p class="kicker">WORKS</p>
-      <h1>LPライティング（サンプル）｜フィルムカメラ初心者向け</h1>
+      <h1>余白を活かしたバナー・サムネ制作｜ビジュアル設計サンプル</h1>
       <p class="lead">
-        本ページは、AIライティングの<strong>構成力・文章トーン</strong>を確認いただくためのサンプルです。
+        情報を詰め込みすぎず、視線誘導と余白のバランスで「一瞬で伝わる」ことを目指した制作例です。
       </p>
       <p class="lead">
-        想定：個人写真店（現像受付・フィルム購入・使い方相談）
+        配色・文字の強弱・配置を整え、SNSや動画サムネでも読み取りやすいレイアウトにまとめています。
       </p>
 
       <div class="grid">
         <!-- Left: Media -->
         <div class="card">
-          <div class="media">
-            <div class="writing-thumb" role="img" aria-label="LPライティングのサンプル（文章プレビュー）">
-              <div class="kicker2"><span class="dot"></span>Writing Sample 01</div>
-              <h2>最初の1本がいちばん不安。<br>その不安、ここで一緒にほどきます。</h2>
-              <p>
-                「ちゃんと写るかな」「巻き上げって合ってる？」「現像ってどれを選べばいいの？」<br>
-                フィルムカメラは、知識より先に“体験”が大事。だからこそ、専門用語を並べるより、
-                <strong>今つまずいているところ</strong>から整理します。
-              </p>
-              <ul>
-                <li><strong>最初の1本を失敗しにくくする</strong>（装填・巻き上げ・ISO・露出の基本）</li>
-                <li><strong>撮り終わった後の不安を減らす</strong>（現像・データ化・プリントの選び方）</li>
-                <li><strong>写真に合うフィルムを提案</strong>（色・粒状感・雰囲気）</li>
-              </ul>
-              <div class="tags">
-                <span class="tag">不安→安心</span>
-                <span class="tag">短文+余白</span>
-                <span class="tag">行動導線</span>
-              </div>
+          <div class="work-item">
+            <div class="work-media">
+                <img src="banner_stack.png" alt="バナー制作サンプル">
             </div>
-          </div>
+        </div>
 
           <div class="meta">
             <div class="pill">
-              <div class="label">カテゴリ</div>
-              <div class="value">AIライティング（LP）</div>
+              <div class="label">想定用途</div>
+              <div class="value">YouTubeサムネ / SNS投稿 / 広告バナー</div>
             </div>
             <div class="pill">
-              <div class="label">目的</div>
-              <div class="value">不安をほどき、次の行動（購入/相談）につなげる</div>
+              <div class="label">サイズ</div>
+              <div class="value">媒体に合わせて調整</div>
             </div>
             <div class="pill">
-              <div class="label">出力想定</div>
-              <div class="value">LP本文 + 見出し構成（サンプル）</div>
+              <div class="label">制作範囲</div>
+              <div class="value">構成 / 画像生成 / 文字入れ / 仕上げ</div>
             </div>
             <div class="pill">
-              <div class="label">文章トーン</div>
-              <div class="value">短く・読みやすく・安心感のある流れ</div>
+              <div class="label">納品形式</div>
+              <div class="value">PNG / JPG（必要ならPSDも）</div>
             </div>
           </div>
 
-          <div class="note">
-            <p>
-              実案件では、掲載用途に合わせて <strong>店名・料金・導線（予約フォーム/LINE）</strong> を差し替えると完成します。
-            </p>
-          </div>
+          <p class="note">
+            ご依頼では、目的（クリック率重視/世界観重視など）と掲載先（SNS/広告/YouTube）に合わせて、複数案の方向性も提案できます。
+          </p>
         </div>
 
-        <!-- Right: Text -->
-        <div class="card">
-          <h2>制作背景</h2>
+        <!-- Right: Description -->
+        <aside class="card">
+          <h2 class="section-title">制作背景</h2>
           <p>
-            フィルムカメラの「はじめて」は、失敗が怖くて行動が止まりやすい領域です。
-            そこで、専門知識の説明ではなく、<strong>不安の言語化 → 整理 → 次の一歩</strong>の順で、
-            気持ちが自然に前へ進む流れを優先しました。
+            バナーやサムネは、内容より先に「目に入る」ことが勝負になります。
+            そこで、文字量を抑えつつ、主役の要素が一瞬で拾えるように整理しました。
           </p>
 
-          <h2>制作のポイント</h2>
-          <ul>
-            <li>専門用語より先に「今つまずいている場所」を言語化</li>
-            <li>否定しない：不安を肯定してから、次の一歩へ誘導</li>
-            <li>短文と余白で読み疲れを減らし、安心感を維持</li>
+          <h2 class="section-title">工夫した点</h2>
+          <ul class="bullets">
+            <li>タイトルの強弱（太さ/サイズ）で視線の流れを作る</li>
+            <li>余白で詰まり感を減らし、読み取りやすさを優先</li>
+            <li>色数を増やしすぎず、情報の優先順位を明確に</li>
           </ul>
 
-          <h2>ご相談について</h2>
-          <p>
-            LP/記事/SNS投稿文など、目的に合わせて「伝わる設計」で整えます。<br>
-            まずは<strong>5分だけ</strong>、今の状況（媒体/目的/ターゲット）を教えてください。
-          </p>
+          <h2 class="section-title">ご依頼時にあると助かる情報</h2>
+          <ul class="bullets">
+            <li>掲載先（YouTube / Instagram / TikTok / 広告など）</li>
+            <li>目的（クリック/購入/認知/世界観など）</li>
+            <li>入れたい文言（必須/任意）と参考イメージ</li>
+          </ul>
 
           <div class="cta">
-            <a class="btn btn-primary" href="index.html#contact">文章制作を相談する</a>
+            <p class="cta-text">
+              「この世界観でサムネを揃えたい」「バナーを数パターン作りたい」など、ラフな相談からでも大丈夫です。
+            </p>
+            <a class="btn btn-primary" href="index.html#contact">制作を相談する</a>
           </div>
-        </div>
+        </aside>
       </div>
     </section>
   </main>
 
   <footer class="footer">
-    <div class="container">
-      <small>© AI CREATOR アキフル　Portfolio</small>
-    </div>
+    © AI CREATOR アキフル　Portfolio
   </footer>
 </body>
 </html>

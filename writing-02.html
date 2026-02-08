@@ -1,76 +1,327 @@
 <!DOCTYPE html>
+
 <html lang="ja">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Writing Sample 02｜フィルムカメラ初心者向けSEO記事</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet" />
-  <style>
-    :root{ --primary:#4e7df5; --text:#333; --muted:#666; --bg:#fff; --bg2:#f8f9fa; }
-    body{ font-family:"Noto Sans JP",sans-serif; margin:0; color:var(--text); background:var(--bg); line-height:1.9; }
-    header{ background:var(--bg2); padding:18px 0; }
-    .container{ width:90%; max-width:920px; margin:0 auto; }
-    a{ color:var(--primary); text-decoration:none; }
-    h1{ font-size:1.6rem; margin:0; }
-    .meta{ color:var(--muted); font-size:.95rem; margin-top:6px; }
-    main{ padding:34px 0 60px; }
-    .card{ background:#fff; border:1px solid #eee; border-radius:14px; padding:22px; }
-    h2{
-  font-size:1.2rem;
-  margin-top:32px;
-  padding-bottom:6px;
-  border-bottom:1px solid rgba(0,0,0,0.06);
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Writing Sample 02｜フィルムカメラ初心者向けSEO記事（導入＋構成＋本文一部）｜AI CREATOR Portfolio</title>
+<style>
+
+
+    :root{
+      --bg:#f6f7fb;
+      --card:#ffffff;
+      --text:#111;
+      --muted:#5a6372;
+      --line:rgba(0,0,0,.10);
+      --shadow:0 10px 30px rgba(0,0,0,.08);
+      --radius:18px;
+      --accent:#4e7df5; /* サイトのメインカラーに合わせてOK */
+      --line:#e5e7eb;
+    }
+
+    *{ box-sizing:border-box; }
+    body{
+      margin:0;
+      font-family: "Noto Sans JP", system-ui, -apple-system, "Hiragino Sans", "Yu Gothic", sans-serif;
+      background:var(--bg);
+      color:var(--text);
+      line-height:1.7;
+    }
+
+    a{ color:inherit; text-decoration:none; }
+    .container{
+      width:min(980px, 92vw);
+      margin:0 auto;
+    }
+
+    /* Header */
+    .topbar{
+      position:sticky;
+      top:0;
+      z-index:10;
+      background:rgba(246,247,251,.85);
+      backdrop-filter: blur(10px);
+      border-bottom:1px solid var(--line);
+    }
+    .topbar-inner{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:12px;
+      padding:14px 0;
+    }
+    .brand{
+      display:flex;
+      flex-direction:column;
+      gap:2px;
+    }
+    .brand strong{
+      font-size:0.95rem;
+      letter-spacing:.02em;
+    }
+    .brand span{
+      font-size:0.8rem;
+      color:var(--muted);
+    }
+    .top-actions{
+      display:flex;
+      gap:10px;
+      align-items:center;
+      flex-wrap:wrap;
+      justify-content:flex-end;
+    }
+
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:8px;
+      padding:10px 14px;
+      border-radius:999px;
+      border:1px solid var(--line);
+      background:#fff;
+      :0 6px 16px rgba(0,0,0,.06);
+      font-weight:700;
+      font-size:.92rem;
+      cursor:pointer;
+      transition:transform .15s ease, box-shadow .15s ease;
+      white-space:nowrap;
+    }
+    .btn:hover{
+      transform:translateY(-1px);
+      box-shadow:0 10px 22px rgba(0,0,0,.10);
+    }
+    .btn-primary{
+      border-color:rgba(78,125,245,.25);
+      background:linear-gradient(135deg, rgba(78,125,245,.12), rgba(78,125,245,.05));
+    }
+
+    /* Main */
+    main{ padding:28px 0 64px; }
+
+    .hero{
+      background:var(--card);
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+      padding:28px;
+    }
+    .kicker{
+      color:var(--muted);
+      font-weight:700;
+      font-size:.9rem;
+      letter-spacing:.06em;
+      text-transform:uppercase;
+      margin:0 0 10px;
+    }
+    h1{
+      margin:0 0 10px;
+      font-size:clamp(22px, 2.2vw, 34px);
+      line-height:1.25;
+    }
+    
+    .section-title{
+      margin:0 0 12px;
+      font-size:1.05rem;
+      color:var(--accent);
+      letter-spacing:.03em;
+    }
+
+    .lead{
+      margin:0;
+      color:var(--muted);
+      font-size:1.02rem;
+    }
+
+    .grid{
+      display:grid;
+      grid-template-columns: 1.15fr .85fr;
+      gap:22px;
+      margin-top:22px;
+    }
+    @media (max-width: 900px){
+      .grid{ grid-template-columns:1fr; }
+    }
+
+    .card{
+      background:var(--card);
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+      padding:22px;
+    }
+
+    /* Video */
+    .media{
+      overflow:hidden;
+      border-radius:18px;
+      border:1px solid var(--line);
+      background:#fff;
+    }
+    .media .writing-thumb{
+  border:1px solid var(--line);
 }
-    ul{ margin:8px 0 0 1.2em; }
-    p{ margin:0 0 14px; }
+    .media video, .media img{
+      width:100%;
+      height:auto;
+      display:block;
+    }
+    .meta{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap:10px;
+      margin-top:14px;
+    }
+    @media (max-width: 520px){
+      .meta{ grid-template-columns:1fr; }
+    }
+    .meta .pill{
+      border:1px solid var(--line);
+      border-radius:14px;
+      padding:10px 12px;
+      background:rgba(255,255,255,.7);
+    }
+    .meta .label{
+      font-size:.78rem;
+      color:var(--muted);
+      font-weight:700;
+      margin-bottom:2px;
+    }
+    .meta .value{
+      font-weight:800;
+    }
+
+    /* Sections */
+    h2{
+      margin:0 0 10px;
+      font-size:1.1rem;
+      letter-spacing:.02em;
+    }
+    ul{
+      margin:10px 0 0 1.1em;
+      padding:0;
+      color:var(--text);
+    }
+    li{ margin:6px 0; }
+    .note{
+      margin-top:14px;
+      color:var(--muted);
+      font-size:.92rem;
+      border-left:4px solid rgba(78,125,245,.35);
+      padding-left:12px;
+    }
+
+    /* Footer */
+    footer{
+      padding:30px 0 50px;
+      color:var(--muted);
+      text-align:center;
+      font-size:.9rem;
+    }
+  
+  
+
+/* writing thumb inside .media */
+.media .writing-thumb{
+  width: 100%;
+  min-height: 520px;
+  border-radius: 18px;
+  background: radial-gradient(1200px 500px at 20% -10%, rgba(99,102,241,.22), transparent 60%),
+              radial-gradient(900px 420px at 90% 10%, rgba(168,85,247,.18), transparent 55%),
+              #ffffff;
+  border: 1px solid rgba(148,163,184,.35);
+  padding: 28px;
+  display: grid;
+  align-content: start;
+  gap: 14px;
+  box-shadow: none;
+}
+.writing-thumb .kicker2{
+  display:inline-flex; align-items:center; gap:10px;
+  font-size: 12px; font-weight: 800; letter-spacing: .08em;
+  color: #475569; text-transform: uppercase;
+}
+.writing-thumb .kicker2 .dot{
+  width:10px;height:10px;border-radius:999px;
+  background: linear-gradient(135deg, rgba(99,102,241,1), rgba(168,85,247,1));
+}
+.writing-thumb h2{
+  margin: 6px 0 0;
+  font-size: 26px;
+  line-height: 1.25;
+}
+.writing-thumb p{ margin:0; color:#334155; line-height:1.85; }
+.writing-thumb ul{ margin: 8px 0 0; padding-left: 18px; color:#334155; line-height:1.9; }
+.writing-thumb .tags{ margin-top: 8px; display:flex; flex-wrap:wrap; gap:10px; }
+.writing-thumb .tag{
+  display:inline-flex; align-items:center; gap:8px;
+  padding: 8px 12px; border-radius: 999px;
+  background: rgba(99,102,241,.08);
+border: 1px solid var(--line);
+color:#1e293b;
+font-size:12px;
+font-weight:800;
+}
+
   </style>
 </head>
 <body>
-  <header><div class="container"><a href="index.html#works" class="back-link">← Back to WORKS</a></a></div></header>
-
-  <main>
-    <div class="container">
-      <h1>Writing Sample 02｜フィルムカメラ初心者向けSEO記事（導入＋構成＋本文一部）</h1>
-      <div class="card" style="background:#f8f9fa; margin:16px 0;">
-  <p>
-    フィルムカメラ初心者向けに、<strong>検索流入を想定したSEO記事</strong>として構成しています。  
-    専門用語を抑えつつ、「何から始めればいいか分からない」読者の不安を  
-    導入文と見出し設計で整理することを意識しました。
-  </p>
+<!-- Header -->
+<div class="topbar">
+<div class="container topbar-inner">
+<div class="brand">
+<strong>AI CREATOR Portfolio</strong>
+<span>WORKS｜詳細</span>
 </div>
-      <div class="meta">
-SEO記事サンプル（構成＋本文一部）｜想定KW：フィルムカメラ 初心者／選び方  
-※検索流入を意識し、初心者の不安整理を軸に設計しています。
+<div class="top-actions">
+<a class="btn" href="index.html#works">← WORKSに戻る</a>
+<a class="btn btn-primary" href="index.html#contact">相談する</a>
 </div>
-
-      <div class="card" style="margin-top:18px;">
-        <h2>タイトル（h1）</h2>
-        <p><strong>フィルムカメラ初心者入門｜後悔しない機種の選び方と始め方</strong></p>
-
-        <h2>導入</h2>
-        <p>フィルムカメラを始めたいと思っても、最初に迷うのは「どれを選べばいいか」です。見た目で決めていいのか、壊れやすくないか、現像やフィルム代はどれくらいかかるのか。気になる点が多いほど、1本目に踏み出すのが難しく感じられます。</p>
-        <p>この記事では、初心者がつまずきやすいポイントを先回りして整理しながら、選び方の基準と始め方をまとめます。難しい専門用語はできるだけ避け、買う前に確認しておきたい点、最初の撮影で失敗を減らすコツも具体的に紹介します。最初の1台が「不安」ではなく「楽しみ」になるように進めていきます。</p>
-
-        <h2>見出し構成（h2）</h2>
-        <ul>
-          <li>初心者が最初に選ぶなら「難しすぎない機種」が正解</li>
-          <li>フィルムカメラの種類（コンパクト・一眼レフ・レンジファインダー）</li>
-          <li>後悔しないチェック項目（動作・レンズ・電池・露出計）</li>
-          <li>予算の考え方（本体＋フィルム＋現像の“合計”で見る）</li>
-          <li>最初の1本で失敗を減らす撮り方</li>
-          <li>よくある質問（Q&A）</li>
-        </ul>
-
-        <h2>本文サンプル（h2の一部）</h2>
-        <p><strong>後悔しないチェック項目（動作・レンズ・電池・露出計）</strong></p>
-        <p>中古で買うことが多いフィルムカメラは、見た目がきれいでも内部に不具合がある場合があります。初心者のうちは、細かな整備知識よりも「最低限ここだけは見る」を持っておくと安心です。</p>
-        <p>まず、<strong>シャッターが切れるか</strong>を確認します。次に、<strong>巻き上げレバーが引っかからず動くか</strong>。この2つは撮影の土台です。</p>
-        <p>つづいて、<strong>レンズにカビや曇りがないか</strong>。光にかざすと見えやすく、写りに影響します。最後に、<strong>電池が必要な機種かどうか</strong>も重要です。露出計が電池式の場合、電池が切れると「撮れるけど露出が分からない」状態になりやすいからです。</p>
-        <p>最初の1台は、完璧な相棒よりも「安心して使える道具」を選ぶ方が、結果的に写真を続けやすくなります。</p>
-      </div>
-    </div>
-  </main>
+</div>
+</div>
+<main class="container">
+<!-- Hero -->
+<section class="hero">
+<p class="kicker">WORKS</p>
+<h1>Writing Sample 02｜フィルムカメラ初心者向けSEO記事（導入＋構成＋本文一部）</h1>
+<p class="lead">検索意図を整理し、見出し設計→本文（導入＋一部）まで整えたサンプルです。読みやすさと「次の行動」につながる流れを意識しています。</p>
+<p class="lead">想定：フィルムカメラ初心者（購入前の不安解消）</p>
+<div class="grid">
+<!-- Left: Media -->
+<div class="card">
+<div class="media">
+<div aria-label="LPライティングのサンプル（文章プレビュー）" class="writing-thumb" role="img"><div class="kicker2"><span class="dot"></span>WRITING SAMPLE 02</div><h2>後悔しない機種選び｜本文サンプル</h2><p>「最低限ここだけ見る」チェック項目を先に出し、初心者の不安を減らす構成で設計しています。</p><ul><li>後悔しないチェック項目（動作・レンズ・露出）</li><li>予算の考え方（本体＋フィルム＋現像）</li><li>最初の1本で失敗を減らす撮り方</li></ul><div class="tags"><span class="tag">検索意図整理</span><span class="tag">見出し設計</span><span class="tag">本文設計</span></div></div>
+</div>
+<div class="meta">
+<div class="pill">
+<div class="label">カテゴリ</div>
+<div class="value">AIライティング（SEO記事）</div>
+</div>
+<div class="pill">
+<div class="label">目的</div>
+<div class="value">検索流入→購入/相談につなげる</div>
+</div>
+<div class="pill">
+<div class="label">出力想定</div>
+<div class="value">導入＋見出し構成（h2）＋本文抜粋</div>
+</div>
+<div class="pill">
+<div class="label">文章トーン</div>
+<div class="value">平易・具体・安心感のある流れ</div>
+</div>
+</div>
+<div class="note">※掲載内容はサンプルです。実案件では、媒体・目的・ターゲットに合わせてトーンやCTAを調整します。</div>
+</div>
+<!-- Right: Text -->
+<div class="card"><h3>制作背景</h3><p>SEO記事は「検索の不安・疑問」に先回りして答えを置くほど、最後まで読むハードルが下がります。本サンプルは、フィルムカメラ初心者がつまずきやすい「購入前のチェック」に絞って、迷いを減らす流れで構成しました。</p><h4>制作のポイント</h4><ul><li>検索ユーザーの悩みを冒頭で言語化し、読む理由を明確にする</li><li>見出しで結論の見取り図を作り、途中離脱を減らす</li><li>手順・チェック項目は「その場で使える」粒度に落とし込む</li></ul><h4>対応可能な制作内容</h4><ul><li>SEO記事（構成案＋本文）</li><li>LP/サービス紹介文</li><li>既存記事のリライト（トーン統一・情報整理）</li><li>複数案の比較提案（方向性出し）</li></ul><h4>ご相談について</h4><p>まずは「媒体（ブログ/LP/SNS）」と「目的（集客/購入/相談）」だけ教えてください。不安が減り、次の行動に進みやすい文章設計で整えます。</p><a class="btn btn-primary" href="index.html#contact">文章制作を相談する</a></div>
+</div>
+</section>
+</main>
+<footer class="footer">
+<div class="container">
+<small>© AI CREATOR アキフル　Portfolio</small>
+</div>
+</footer>
 </body>
 </html>

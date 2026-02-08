@@ -1,0 +1,318 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>WORKS｜水彩調ビジュアルのワンカット映像</title>
+  <meta name="description" content="水彩調ビジュアルのワンカット映像（制作実績）の詳細ページです。" />
+
+  <style>
+    :root{
+      --bg:#f6f7fb;
+      --card:#ffffff;
+      --text:#111;
+      --muted:#5a6372;
+      --line:rgba(0,0,0,.10);
+      --shadow:0 10px 30px rgba(0,0,0,.08);
+      --radius:18px;
+      --accent:#4e7df5; /* indexと同系色でOK */
+    }
+
+    *{ box-sizing:border-box; }
+    body{
+      margin:0;
+      font-family:"Noto Sans JP",system-ui,-apple-system,"Hiragino Sans","Yu Gothic",sans-serif;
+      background:var(--bg);
+      color:var(--text);
+      line-height:1.7;
+    }
+
+    a{ color:inherit; text-decoration:none; }
+    .container{
+      width:min(980px, 92vw);
+      margin:0 auto;
+    }
+
+    /* Header */
+    .topbar{
+      position:sticky;
+      top:0;
+      z-index:10;
+      background:rgba(246,247,251,.85);
+      backdrop-filter: blur(10px);
+      border-bottom:1px solid var(--line);
+    }
+    .topbar-inner{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:12px;
+      padding:14px 0;
+    }
+    .brand{
+      display:flex;
+      flex-direction:column;
+      gap:2px;
+    }
+    .brand strong{
+      font-size:0.95rem;
+      letter-spacing:.02em;
+    }
+    .brand span{
+      font-size:0.8rem;
+      color:var(--muted);
+    }
+    .top-actions{
+      display:flex;
+      gap:10px;
+      align-items:center;
+      flex-wrap:wrap;
+      justify-content:flex-end;
+    }
+
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:8px;
+      padding:10px 14px;
+      border-radius:999px;
+      border:1px solid var(--line);
+      background:#fff;
+      box-shadow:0 6px 16px rgba(0,0,0,.06);
+      font-weight:700;
+      font-size:.92rem;
+      cursor:pointer;
+      transition:transform .15s ease, box-shadow .15s ease;
+      white-space:nowrap;
+    }
+    .btn:hover{
+      transform:translateY(-1px);
+      box-shadow:0 10px 22px rgba(0,0,0,.10);
+    }
+    .btn-primary{
+      border-color:rgba(78,125,245,.25);
+      background:linear-gradient(135deg, rgba(78,125,245,.12), rgba(78,125,245,.05));
+    }
+
+    /* Main */
+    main{ padding:28px 0 64px; }
+
+    .hero{
+      background:var(--card);
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+      padding:28px;
+    }
+    .kicker{
+      color:var(--muted);
+      font-weight:700;
+      font-size:.9rem;
+      letter-spacing:.06em;
+      text-transform:uppercase;
+      margin:0 0 10px;
+    }
+    h1{
+      margin:0 0 10px;
+      font-size:clamp(22px, 2.2vw, 34px);
+      line-height:1.25;
+    }
+    
+    .section-title{
+      margin:0 0 12px;
+      font-size:1.05rem;
+      color:var(--accent);
+      letter-spacing:.03em;
+    }
+
+    .lead{
+      margin:0 0 10px;
+      color:var(--muted);
+      font-size:1.02rem;
+    }
+
+    .grid{
+      display:grid;
+      grid-template-columns: 1.15fr .85fr;
+      gap:22px;
+      margin-top:22px;
+    }
+    @media (max-width: 900px){
+      .grid{ grid-template-columns:1fr; }
+    }
+
+    .card{
+      background:var(--card);
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+      padding:22px;
+    }
+
+    /* Video */
+    .media{
+      overflow:hidden;
+      border-radius:16px;
+      border:1px solid var(--line);
+      background:#000;
+    }
+    .media video, .media img{
+      width:100%;
+      height:auto;
+      display:block;
+    }
+    .meta{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap:10px;
+      margin-top:14px;
+    }
+    @media (max-width: 520px){
+      .meta{ grid-template-columns:1fr; }
+    }
+    .meta .pill{
+      border:1px solid var(--line);
+      border-radius:14px;
+      padding:10px 12px;
+      background:rgba(255,255,255,.7);
+    }
+    .meta .label{
+      font-size:.78rem;
+      color:var(--muted);
+      font-weight:700;
+      margin-bottom:2px;
+    }
+    .meta .value{
+      font-weight:800;
+    }
+
+    /* Sections */
+    h2{
+      margin:0 0 10px;
+      font-size:1.1rem;
+      letter-spacing:.02em;
+    }
+    ul{
+      margin:10px 0 0 1.1em;
+      padding:0;
+      color:var(--text);
+    }
+    li{ margin:6px 0; }
+    .note{
+      margin-top:14px;
+      color:var(--muted);
+      font-size:.92rem;
+      border-left:4px solid rgba(78,125,245,.35);
+      padding-left:12px;
+    }
+
+    /* Footer */
+    footer{
+      padding:30px 0 50px;
+      color:var(--muted);
+      text-align:center;
+      font-size:.9rem;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Header -->
+  <div class="topbar">
+    <div class="container topbar-inner">
+      <div class="brand">
+        <strong>AI CREATOR Portfolio</strong>
+        <span>WORKS｜詳細</span>
+      </div>
+
+      <div class="top-actions">
+        <a class="btn" href="index.html#works">← WORKSに戻る</a>
+        <a class="btn btn-primary" href="index.html#contact">相談する</a>
+      </div>
+    </div>
+  </div>
+
+  <main class="container">
+    <!-- Hero -->
+    <section class="hero">
+      <p class="kicker">WORKS</p>
+      <h1>水彩調ビジュアルのワンカット映像｜ショート映像サンプル</h1>
+      <p class="lead">
+        水彩の空気感を活かし、短い尺でも「世界観」が伝わる構成を意識した映像サンプルです。
+      </p>
+      <p class="lead">
+        情報を詰め込みすぎず、懐かしさや余韻が残る“間”を残して、観る人が物語を重ねられる設計にしています。
+      </p>
+
+      <div class="grid">
+        <!-- Left: Media -->
+        <div class="card">
+          <div class="media">
+            <video controls playsinline preload="metadata" poster="thumb_work_portfolio_watercolor_girl_5sec.png">
+              <source src="portfolio_watercolor_girl_5sec.mp4" type="video/mp4" />
+            </video>
+          </div>
+
+          <div class="meta">
+            <div class="pill">
+              <div class="label">想定用途</div>
+              <div class="value">世界観紹介 / SNS投稿</div>
+            </div>
+            <div class="pill">
+              <div class="label">尺</div>
+              <div class="value">5秒（サンプル）</div>
+            </div>
+            <div class="pill">
+              <div class="label">制作範囲</div>
+              <div class="value">構成 / 生成 / 編集</div>
+            </div>
+            <div class="pill">
+              <div class="label">納品形式</div>
+              <div class="value">MP4（縦横対応可）</div>
+            </div>
+          </div>
+
+          <p class="note">
+            ご依頼では、媒体（TikTok/YouTube/広告など）や目的に合わせて、見せ方（テンポ/余韻/構成）を最適化します。
+          </p>
+        </div>
+
+        <!-- Right: Description -->
+        <aside class="card">
+          <h2 class="section-title">制作背景</h2>
+          <p>
+            「見た瞬間に伝わる」よりも、「見終わったあとに残る」印象を大切にしたサンプルです。
+            水彩特有の滲みや柔らかいトーンを活かし、短尺でも空気感が伝わるように整えています。
+          </p>
+
+          <h2 class="section-title">表現のポイント</h2>
+          <ul>
+            <li>画面内の情報量を抑えて余白を確保</li>
+            <li>“雰囲気”が伝わる色・質感の統一</li>
+            <li>短尺でも世界観が途切れないテンポ設計</li>
+          </ul>
+
+          <h2 class="section-title">対応可能な制作内容</h2>
+          <ul>
+            <li>SNSショート動画制作</li>
+            <li>ビジュアル重視の世界観映像</li>
+            <li>既存素材の再編集・再構成</li>
+            <li>AI生成素材を活用した映像制作</li>
+          </ul>
+
+          <h2 class="section-title">ご相談について</h2>
+          <p>
+            構成案のご相談や、既存動画の改善提案なども対応可能です。
+            ページ右上の「相談する」から、お気軽にお問い合わせください。
+          </p>
+        </aside>
+      </div>
+    </section>
+
+    <footer>
+      © AI CREATOR アキフル Portfolio
+    </footer>
+  </main>
+</body>
+</html>

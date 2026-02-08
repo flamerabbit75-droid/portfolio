@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>WORKS｜テイスト作例（ひまわり）｜AI CREATOR アキフル</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet" />
+
+  <style>
+    :root{
+      --primary:#4e7df5;
+      --secondary:#a768f6;
+      --text:#222;
+      --muted:#666;
+      --bg:#f5f6fa;
+      --card:#fff;
+      --border:rgba(0,0,0,.08);
+      --shadow:0 14px 40px rgba(0,0,0,.10);
+      --radius:18px;
+      --grad:linear-gradient(135deg,var(--primary),var(--secondary));
+    }
+    *{ box-sizing:border-box; }
+    body{
+      margin:0;
+      font-family:"Noto Sans JP",sans-serif;
+      color:var(--text);
+      background:var(--bg);
+      line-height:1.7;
+    }
+    a{ color:inherit; text-decoration:none; }
+    .container{
+      width:90%;
+      max-width:1100px;
+      margin:0 auto;
+      padding:0 24px;
+    }
+
+    /* ===== Top bar ===== */
+    .topbar{
+      position:sticky;
+      top:0;
+      z-index:10;
+      background:rgba(245,246,250,.85);
+      backdrop-filter: blur(10px);
+      border-bottom:1px solid rgba(0,0,0,.06);
+    }
+    .topbar-inner{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:16px;
+      padding:14px 0;
+    }
+    .brand{
+      display:flex;
+      flex-direction:column;
+      gap:2px;
+      user-select:none;
+    }
+    .brand .title{
+      font-weight:700;
+      font-size:14px;
+      letter-spacing:.04em;
+    }
+    .brand .sub{
+      font-size:12px;
+      color:var(--muted);
+    }
+    .actions{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      justify-content:flex-end;
+    }
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:10px 14px;
+      border-radius:999px;
+      font-weight:700;
+      font-size:13px;
+      border:1px solid rgba(0,0,0,.12);
+      background:#fff;
+      cursor:pointer;
+      transition:.2s;
+      white-space:nowrap;
+    }
+    .btn:hover{ transform:translateY(-1px); }
+    .btn-primary{
+      border:none;
+      background:var(--grad);
+      color:#fff;
+      box-shadow:0 10px 24px rgba(78,125,245,.25);
+    }
+
+    /* ===== Main card ===== */
+    main{ padding:38px 0 70px; }
+    .panel{
+      background:var(--card);
+      border:1px solid rgba(0,0,0,.06);
+      border-radius:22px;
+      box-shadow: var(--shadow);
+      padding:28px;
+    }
+    .kicker{
+      display:inline-flex;
+      gap:10px;
+      align-items:center;
+      font-size:12px;
+      font-weight:700;
+      letter-spacing:.12em;
+      color:var(--muted);
+      text-transform:uppercase;
+    }
+    .kicker span{
+      color:var(--primary);
+      font-weight:700;
+    }
+    h1{
+      margin:10px 0 10px;
+      font-size:30px;
+      line-height:1.25;
+      letter-spacing:.01em;
+    }
+    .lead{
+      margin:0 0 18px;
+      color:var(--muted);
+      max-width:900px;
+    }
+
+    .grid{
+      display:grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap:22px;
+      margin-top:18px;
+      align-items:start;
+    }
+
+    /* ===== Media ===== */
+    .media-card{
+      background:#fff;
+      border:1px solid rgba(0,0,0,.06);
+      border-radius:18px;
+      padding:16px;
+    }
+    .media-frame{
+      width:100%;
+      aspect-ratio:1 / 1;
+      overflow:hidden;
+      border-radius:14px;
+      background:#000;
+    }
+
+.media-frame img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+}
+    /* ===== Meta boxes ===== */
+    .meta{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap:12px;
+      margin-top:14px;
+    }
+    .meta .box{
+      border:1px solid rgba(0,0,0,.08);
+      border-radius:14px;
+      padding:12px 12px;
+      background:#fff;
+    }
+    .meta .label{
+      font-size:11px;
+      color:var(--muted);
+      font-weight:700;
+      margin-bottom:6px;
+    }
+    .meta .value{
+      font-size:13px;
+      font-weight:700;
+    }
+    .note{
+      margin-top:14px;
+      padding-left:12px;
+      border-left:3px solid rgba(78,125,245,.35);
+      color:var(--muted);
+      font-size:13px;
+    }
+
+    /* ===== Right card ===== */
+    .side{
+      background:#fff;
+      border:1px solid rgba(0,0,0,.06);
+      border-radius:18px;
+      padding:18px 18px 16px;
+    }
+    .side h2{
+      margin:0 0 10px;
+      font-size:15px;
+      color:var(--primary); /* ← H2色統一（青） */
+    }
+    .side p{
+      margin:0 0 14px;
+      color:var(--muted);
+      font-size:14px;
+    }
+    .side ul{
+      margin:0 0 14px;
+      padding-left:18px;
+      color:var(--text);
+      font-size:14px;
+    }
+    .side li{ margin:6px 0; }
+    .side .divider{
+      height:1px;
+      background:rgba(0,0,0,.08);
+      margin:14px 0;
+    }
+    .cta{
+      margin-top:10px;
+    }
+
+    footer{
+      text-align:center;
+      color:var(--muted);
+      font-size:12px;
+      padding:28px 0 34px;
+    }
+
+    @media (max-width: 900px){
+      .grid{ grid-template-columns: 1fr; }
+      h1{ font-size:26px; }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="topbar">
+    <div class="container">
+      <div class="topbar-inner">
+        <div class="brand">
+          <div class="title">AI CREATOR Portfolio</div>
+          <div class="sub">WORKS｜詳細</div>
+        </div>
+        <div class="actions">
+          <a class="btn" href="index.html#works">← WORKSに戻る</a>
+          <a class="btn btn-primary" href="mailto:YOUR_EMAIL_HERE">相談する</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+      <section class="panel">
+        <div class="kicker">WORKS <span>DETAIL</span></div>
+
+        <h1>現実の延長にある、非日常の一瞬｜テイスト作例（ひまわり）</h1>
+        <p class="lead">
+          強いインパクトよりも、見終わったあとに静かに残る印象を大切にしたビジュアル例です。
+          色の余韻・光のニュアンス・空気感の密度を整え、“世界観”が伝わる一枚に仕上げています。
+        </p>
+
+        <div class="grid">
+          <!-- Left -->
+          <div>
+            <div class="media-card">
+              <div class="media-frame">
+                <img src="sunflower.jpg" alt="テイスト作例（ひまわり）">
+              </div>
+
+              <div class="meta">
+                <div class="box">
+                  <div class="label">想定用途</div>
+                  <div class="value">世界観訴求 / キービジュアル</div>
+                </div>
+                <div class="box">
+                  <div class="label">仕上がり</div>
+                  <div class="value">テイスト統一 / 雰囲気重視</div>
+                </div>
+                <div class="box">
+                  <div class="label">制作範囲</div>
+                  <div class="value">生成 / レタッチ / トーン調整</div>
+                </div>
+                <div class="box">
+                  <div class="label">納品形式</div>
+                  <div class="value">PNG / JPG（用途に合わせて）</div>
+                </div>
+              </div>
+
+              <p class="note">
+                ご相談時は「参考イメージ」「用途（LP/広告/投稿など）」「想定サイズ」をいただけると、統一感のある方向性で整えやすいです。
+              </p>
+            </div>
+          </div>
+
+          <!-- Right -->
+          <aside class="side">
+            <h2>制作背景</h2>
+            <p>
+              “見た瞬間に伝わる”よりも、“見終わったあとに残る”印象を重視したテイスト例です。
+              彩度・コントラスト・質感のバランスを整え、強すぎない余韻を狙っています。
+            </p>
+
+            <h2>制作のポイント</h2>
+            <ul>
+              <li>色の強弱を整理し、視線が迷わない画作り</li>
+              <li>質感・光のニュアンスを整え、空気感を出す</li>
+              <li>同系統の量産にも耐える“トーン設計”</li>
+            </ul>
+
+            <div class="divider"></div>
+
+            <h2>対応可能な制作内容</h2>
+            <ul>
+              <li>世界観ビジュアル / キービジュアル制作</li>
+              <li>SNS投稿用のテイスト統一</li>
+              <li>既存素材の色味・トーンの再調整</li>
+              <li>複数案の比較提案（方向性出し）</li>
+            </ul>
+
+            <div class="divider"></div>
+
+            <h2>ご相談について</h2>
+            <p>
+              方向性の相談だけでもOKです。用途と雰囲気を伺い、見せ方（トーン/余白/情報量）を整えます。
+            </p>
+
+            <div class="cta">
+              <a class="btn btn-primary" href="mailto:YOUR_EMAIL_HERE">制作を相談する</a>
+            </div>
+          </aside>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer>© AI CREATOR アキフル Portfolio</footer>
+</body>
+</html>
