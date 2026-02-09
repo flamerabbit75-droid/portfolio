@@ -189,50 +189,138 @@
     }
     .hero-text:last-of-type{ margin-bottom:34px; }
 
-    /* ========= About ========= */
-    /* 横並びの親は .about .container */
-    .about .container{
+    .hero-list{
+      margin:18px 0 22px;
+      padding-left:1.2em;
+      color:var(--text-light);
+      line-height:1.8;
+    }
+    .hero-list li{ margin:6px 0; }
+
+    .hero-actions{
       display:flex;
+      gap:16px;
+      flex-wrap:wrap;
       align-items:center;
-      gap:90px;
+      margin-top:10px;
+    }
+    .hero-link{
+      font-weight:700;
+      color:var(--text-color);
+      padding:10px 6px;
+      border-radius:10px;
+      transition:color .2s ease, background-color .2s ease;
+    }
+    .hero-link:hover{
+      color:var(--primary-color);
+      background: rgba(78,125,245,0.08);
     }
 
-    /* 画像とテキストの幅バランス */
-    .about-image{
-      flex:0 0 420px;
-      display:flex;
-      justify-content:center;
-    }
-    .about-text{
-      flex:1;
-      min-width:0;
+    .hero-note{
+      margin-top:12px;
+      color:var(--text-light);
+      font-size:.9rem;
     }
 
-    .about-image-layer{
-      width:100%;
-      max-width:420px;
-      height:350px;
-      border-radius:18px;
-      background-image:url("./about-working-rabbit.jpg");
-      background-repeat:no-repeat;
-      background-position:center 40px;
-      background-size:115%;
-      box-shadow:0 18px 30px rgba(0,0,0,0.08);
-      opacity:.65;
-    }
 
-    .about-text h2{
-      margin:0 0 10px;
-      font-size:2rem;
-      letter-spacing:.05em;
-    }
-    .about-text h3{
-      margin:0 0 18px;
-      font-size:1.25rem;
-    }
-    .about-text p{ color:var(--text-light); margin:0 0 14px; }
+    /* ========= About ========= */
+.about .container{
+  display:flex;
+  align-items:center;
+  gap:90px;
+}
 
-    /* ========= Services ========= */
+.about-image{
+  flex:0 0 420px;
+  width:100%;
+  max-width:420px;
+  height:350px;
+
+  border-radius:18px;
+  overflow:hidden;
+
+  box-shadow:0 18px 30px rgba(0,0,0,0.08);
+  background:var(--bg-white);
+
+  /* Safari/Chrome: ensure overflow clipping is honored */
+  position:relative;
+  isolation:isolate;
+  transform:translateZ(0);
+  -webkit-mask-image:-webkit-radial-gradient(white, black);
+}
+
+.about-image-img{
+  width:100%;
+  height:100%;
+  display:block;
+  object-fit:cover;
+
+  /* inherit the same rounding */
+  border-radius:inherit;
+}
+
+.about-text{
+  flex:1;
+  min-width:0;
+}
+
+.about-text h2{
+  margin:0 0 10px;
+  font-size:2rem;
+  letter-spacing:.05em;
+}
+
+.about-text h3{
+  margin:0 0 18px;
+  font-size:1.25rem;
+}
+
+.about-text p{
+  color:var(--text-light);
+  margin:0 0 14px;
+}
+
+/* ABOUT画像：色が濃すぎるのを“薄膜”で戻す（おすすめ） */
+.about-image{
+  position: relative;
+}
+
+.about-image::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background: rgba(255,255,255,0.40); /* 0.22〜0.40で好み調整 */
+  pointer-events:none;
+  border-radius: inherit;
+}
+
+/* Responsive */
+@media (max-width: 992px){
+  .about .container{
+    flex-direction:column;
+    text-align:center;
+    gap:40px;
+  }
+  .about-image{
+    flex-basis:auto;
+    width:min(420px, 92%);
+    height:auto;
+    aspect-ratio:4/3;
+    margin:0 auto;
+  }
+  .about-image-img{
+    height:100%;
+  }
+}
+
+@media (max-width: 520px){
+  .about-image{
+    width:min(420px, 92%);
+    aspect-ratio:4/3;
+  }
+}
+
+/* ========= Services ========= */
     .services{ background:var(--bg-light); }
     .services-grid{
       display:grid;
@@ -248,6 +336,9 @@
       box-shadow:0 10px 30px rgba(0,0,0,0.05);
       transition:transform .25s ease;
     }
+    .service-card p{
+  text-align: left;
+}
     .service-card:hover{ transform:translateY(-8px); }
     .service-icon{
       font-size:2.2rem;
@@ -307,6 +398,29 @@
       overflow:hidden;
       box-shadow: inset 0 -1px 0 rgba(0,0,0,0.06);
     }
+
+    /* Play button (video thumb) */
+    .work-item .play-button{
+      position:absolute;
+      left:50%;
+      top:50%;
+      transform:translate(-50%, -50%);
+      width:72px;
+      height:72px;
+      border-radius:999px;
+      border:none;
+      background:rgba(0,0,0,.35);
+      color:#fff;
+      display:grid;
+      place-items:center;
+      font-weight:800;
+      font-size:34px;
+      padding-left:4px;
+      cursor:pointer;
+      z-index:6;
+    }
+    .work-item .play-button:hover{ filter:brightness(1.05); }
+    .work-item.is-playing .play-button{ display:none; }
 
     .work-item > img,
     .work-item > video{
@@ -413,11 +527,7 @@
         text-align:center;
         gap:40px;
       }
-      .about-image{
-        flex-basis:auto;
-        width:min(420px, 92%);
-        margin:0 auto;
-      }
+      
 
       .work-card{ flex:1 1 calc(50% - 20px); max-width:calc(50% - 20px); }
     }
@@ -451,7 +561,12 @@
       color:var(--text-light);
       font-size:.9rem;
     }
-  </style>
+  
+    /* ABOUT image: allow natural height on small screens */
+    @media (max-width: 768px){
+      
+    }
+</style>
 </head>
 
 <body>
@@ -475,13 +590,26 @@
     <section id="home" class="hero">
       <div class="container">
         <div class="hero-content">
-          <h1 class="hero-title">あなたのサービスを、AI×クリエイティブで「伝わる映像」</h1>
+          <h1 class="hero-title">
+あなたのサービスを、AI×クリエイティブで「伝わる映像」へ
+</h1>
 
-          <p class="hero-text">AIを使いながらも、人の感覚を置き去りにしない制作を大切にしています。</p>
-          <p class="hero-text">大切にしているのは、情報の量ではなく「伝わること」。</p>
-          <p class="hero-text">受け手にしっかり届くまで、丁寧に整えます。</p>
+<p class="hero-text">
+AIを使いながらも、人の感覚を置き去りにしない制作を大切にしています。
+</p>
+<p class="hero-text">
+大切にしているのは、情報の量ではなく「伝わること」。
+</p>
+<p class="hero-text">
+受け手にしっかり届くまで、丁寧に整えます。
+</p>
 
-          <a href="#services" class="btn btn-gradient">提供できることを見る</a>
+<a href="#services" class="btn btn-gradient">
+提供できることを見る
+</a>
+          </div>
+
+          <p class="hero-note">※1〜2営業日以内に返信します</p>
         </div>
       </div>
     </section>
@@ -489,8 +617,8 @@
     <!-- About -->
     <section id="about" class="about">
       <div class="container">
-        <div class="about-image">
-          <div class="about-image-layer" role="img" aria-label="AI CREATOR ロボウサギ"></div>
+        <div class="about-image" aria-label="AI CREATOR ロボウサギ">
+          <img class="about-image-img" src="./about-working-rabbit.jpg" alt="AI CREATOR ロボウサギ" loading="lazy" decoding="async" />
         </div>
 
         <div class="about-text">
@@ -540,86 +668,85 @@
     <section id="works" class="works">
       <div class="container">
         <h2 class="section-title">WORKS</h2>
-        <ul class="works-tabs"></ul>
-
-        <p class="works-intro">
-          これまでに制作した一部をご紹介します。<br>
-          すべて「どう伝わるか」を軸に組み立てたものです。
-        </p>
+        <p class="works-intro">AI制作物は「見せる」よりも「伝わる」を優先して整理しています。クリックで詳細ページへ移動できます。</p>
 
         <div class="works-grid">
-          <!-- 1: 動画（grandpa） -->
-          <div class="work-card">
+          <!-- 1: 動画（おじいちゃん） -->
+          <a href="works-grandpa.html" class="work-card work-card-link" aria-label="Works: おじいちゃんの縦動画（詳細へ）">
             <div class="work-item">
-              <video controls playsinline preload="metadata" poster="thumb_grandpa.png">
+              <video class="work-video" playsinline muted preload="metadata" poster="thumb_grandpa.png">
                 <source src="portfolio_grandpa_surprise_5sec.mp4" type="video/mp4">
               </video>
+              <button class="play-button" type="button" aria-label="動画を再生">▶</button>
             </div>
             <div class="work-caption">
-              <h3>やさしいトーンの映像構成</h3>
-              <p>強い演出に頼らず、表情や間の変化を丁寧に拾い、観る人の感情が自然に重なる流れを意識しています。</p>
+              <h3>おじいちゃんの縦型ショート動画</h3>
+              <p>TikTok / Shorts向けのテンポと余白設計</p>
             </div>
-          </div>
+          </a>
 
           <!-- 2: 動画（水彩少女） -->
-          <div class="work-card">
+          <a href="works-watercolor.html" class="work-card work-card-link" aria-label="Works: 水彩調ビジュアル動画（詳細へ）">
             <div class="work-item">
-              <video controls playsinline preload="metadata" poster="portfolio_watercolor_girl_5sec.png">
+              <video class="work-video" playsinline muted preload="metadata" poster="portfolio_watercolor_girl_5sec.png">
                 <source src="portfolio_watercolor_girl_5sec.mp4" type="video/mp4">
               </video>
+              <button class="play-button" type="button" aria-label="動画を再生">▶</button>
             </div>
             <div class="work-caption">
               <h3>水彩調ビジュアルのワンカット映像</h3>
-              <p>懐かしさや記憶に触れる空気感を大切にし、観る人それぞれが物語を重ねられる余白を残しています。</p>
+              <p>懐かしさが残る空気感を丁寧に</p>
             </div>
-          </div>
+          </a>
 
           <!-- 3: 画像（バナー・サムネ） -->
-          <div class="work-card">
+          <a href="works-banner.html" class="work-card work-card-link" aria-label="Works: バナー・サムネ制作（詳細へ）">
             <div class="work-item">
               <img src="banner_stack.png" alt="AI画像作品（バナー・サムネイル例）">
             </div>
             <div class="work-caption">
-              <h3>余白を活かしたビジュアル表現</h3>
-              <p>情報を詰め込みすぎず、色と余白のバランスで「一瞬で伝わる」設計に整えています。</p>
+              <h3>バナー・サムネイル制作</h3>
+              <p>一瞬で伝わる余白と設計</p>
             </div>
-          </div>
+          </a>
 
           <!-- 4: 画像（テイスト作例） -->
-          <div class="work-card">
+          <a href="works-sunflower.html" class="work-card work-card-link" aria-label="Works: テイスト作例（詳細へ）">
             <div class="work-item">
               <img src="sunflower.jpg" alt="AI画像作品（テイスト作例）">
             </div>
             <div class="work-caption">
-              <h3>現実の延長にある、非日常の一瞬</h3>
-              <p>強いインパクトよりも、見終わったあとに静かに残る印象を大切にしています。</p>
+              <h3>テイスト作例</h3>
+              <p>印象が静かに残るビジュアル</p>
             </div>
-          </div>
+          </a>
 
           <!-- 5: 動画（SNS構成サンプル） -->
-          <div class="work-card">
+          <a href="works-veo.html" class="work-card work-card-link" aria-label="Works: SNS向けショート動画（詳細へ）">
             <div class="work-item">
-              <video controls playsinline muted preload="metadata" poster="thumb_veo.png">
+              <video class="work-video" playsinline muted preload="metadata" poster="thumb_veo.png">
                 <source src="veo3.mp4" type="video/mp4">
               </video>
+              <button class="play-button" type="button" aria-label="動画を再生">▶</button>
             </div>
             <div class="work-caption">
               <h3>SNS向けショート動画（構成サンプル）</h3>
-              <p>強い煽りに頼らず、テンポと余白で引き込み、自然に最後まで見てもらえる流れを意識しています。</p>
+              <p>煽りに頼らず、最後まで見てもらう設計</p>
             </div>
-          </div>
+          </a>
 
           <!-- 6: 画像（スマホ） -->
-          <div class="work-card">
+          <a href="works-smartphone.html" class="work-card work-card-link" aria-label="Works: スマートフォンビジュアル（詳細へ）">
             <div class="work-item">
               <img src="smartphone.jpg" alt="スマートフォンのビジュアル">
             </div>
             <div class="work-caption">
-              <h3>日常に寄り添うワンシーン表現</h3>
-              <p>冷たさを感じさせない光と空気感で、観る人が自分の記憶や感情を重ねられる余白を残しています。</p>
+              <h3>スマートフォンビジュアル</h3>
+              <p>日常の温度感を残す表現</p>
             </div>
-          </div>
+          </a>
 
+          <!-- Writing samples -->
           <a href="writing-01.html" class="work-card work-card-link" aria-label="Writing Sample 01（LPライティング）を開く">
             <div class="work-item">
               <div class="thumb">
@@ -673,6 +800,49 @@
         </div>
       </div>
     </section>
+
+    <script>
+      // Works: play button (prevent navigation)
+      document.querySelectorAll('.work-card .play-button').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+          e.preventDefault();
+          e.stopPropagation();
+          const card = btn.closest('.work-card');
+          const video = card ? card.querySelector('video.work-video') : null;
+          if (!video) return;
+          // Pause others
+          document.querySelectorAll('video.work-video').forEach(v => { if (v !== video) { v.pause(); } });
+
+          if (video.paused) {
+            video.play().catch(()=>{});
+          } else {
+            video.pause();
+          }
+        });
+      });
+
+      // Hide/show play button based on state
+      document.querySelectorAll('video.work-video').forEach(video => {
+        const btn = video.parentElement?.querySelector('.play-button');
+        const sync = () => {
+          if (!btn) return;
+          btn.style.opacity = video.paused ? '1' : '0';
+          btn.style.pointerEvents = video.paused ? 'auto' : 'none';
+        };
+        ['play','pause','ended','loadeddata'].forEach(ev => video.addEventListener(ev, sync));
+        sync();
+      });
+
+      // Prevent click on video from navigating, but allow tap-to-play
+      document.querySelectorAll('.work-card video.work-video').forEach(video => {
+        video.addEventListener('click', (e) => {
+          e.preventDefault();
+          e.stopPropagation();
+          if (video.paused) video.play().catch(()=>{});
+          else video.pause();
+        });
+      });
+    </script>
   </main>
 
   <footer class="footer">
