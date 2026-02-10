@@ -553,6 +553,52 @@
       .work-card{ flex:1 1 100%; max-width:100%; }
     }
 
+    /* ========= Contact ========= */
+.contact{ background: var(--bg-light); }
+
+.form-embed{
+  background: var(--bg-white);
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+  overflow: hidden;
+}
+
+.form-embed iframe{
+  width: 100%;
+  height: 980px;   /* Googleフォームは縦長なのでここを基準に */
+  border: 0;
+  display: block;
+}
+
+/* CONTACT embed */
+.form-embed{
+  max-width: 900px;          /* PCで広く見せる */
+  margin: 0 auto;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 18px 30px rgba(0,0,0,0.08);
+  background: #fff;
+}
+
+/* iframeは width固定をやめて100% */
+.form-embed iframe{
+  width: 100%;
+  height: 1500px;
+  border: 0;
+  display: block;
+}
+
+.form-embed iframe{
+  width: 100%;
+  height: 1700px;
+}
+
+@media (max-width: 520px){
+  .form-embed iframe{
+    height: 1700px;
+  }
+}
+
     /* ========= Footer ========= */
     .footer{
       text-align:center;
@@ -581,6 +627,7 @@
         <a href="#services">SERVICES</a>
         <a href="#about">ABOUT</a>
         <a href="#works">WORKS</a>
+        <a href="#contact">CONTACT</a>
       </nav>
     </div>
   </header>
@@ -800,6 +847,24 @@ AIを使いながらも、人の感覚を置き去りにしない制作を大切
         </div>
       </div>
     </section>
+    
+<section id="contact" class="contact">
+  <div class="container">
+    <h2 class="section-title">CONTACT</h2>
+    <p class="works-intro">
+      ご相談内容を確認のうえ、1〜2営業日以内にご返信します。
+    </p>
+
+<div class="form-embed">
+  <iframe
+    src="https://docs.google.com/forms/d/e/1FAIpQLSfOXOfujntqUD8LZuA_fWiHSXz3Y2B201SOu4Rr_vf45ocOPw/viewform?embedded=true"
+    loading="lazy"
+    title="お問い合わせフォーム"
+    allow="fullscreen"
+  ></iframe>
+</div>
+  </div>
+</section>
 
     <script>
       // Works: play button (prevent navigation)
@@ -846,7 +911,7 @@ AIを使いながらも、人の感覚を置き去りにしない制作を大切
   </main>
 
   <footer class="footer">
-    © AI CREATOR アキフル　Portfolio
+    © AI CREATOR アキフル Portfolio
   </footer>
 </body>
 </html>
