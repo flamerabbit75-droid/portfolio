@@ -1,0 +1,66 @@
+/* ===== Common (Buttons) ===== */
+:root{
+  --primary-color:#4e7df5;
+  --secondary-color:#a768f6;
+}
+
+/* Buttons base */
+.btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
+
+  padding:18px 44px;
+  border-radius:999px;
+  font-weight:800;
+  font-size:.92rem;             
+  line-height:1;
+
+  text-align:center;
+  cursor:pointer;
+  text-decoration:none;
+  user-select:none;
+
+  transition:transform .18s ease, box-shadow .18s ease, background-color .18s ease, border-color .18s ease;
+  -webkit-tap-highlight-color:transparent;
+}
+
+/* 左：戻る（白 + 薄影） */
+.btn-outline{
+  background:#ffffff;
+  border:1px solid rgba(0,0,0,0.10);
+  color:#111111;
+
+  box-shadow:0 12px 28px rgba(0,0,0,0.10);
+}
+.btn-outline:hover{
+  transform:translateY(-1px);
+  box-shadow:0 16px 34px rgba(0,0,0,0.12);
+}
+
+/* 右：相談（淡い水色 + 薄い青枠、文字は黒） */
+/* メインボタン */
+.btn-primary{
+  background: linear-gradient(135deg,#6c7cff,#8fa2ff);
+  color:#fff;
+  border:none;
+
+  /* ← 影を追加 */
+  box-shadow: 0 6px 16px rgba(108,124,255,0.25);
+
+  transition: all .2s ease;
+}
+
+/* ホバー時 */
+.btn-primary:hover{
+  transform: translateY(-1px);
+  box-shadow: 0 10px 22px rgba(108,124,255,0.35);
+}
+/* スマホでデカすぎる場合だけ少し落とす */
+@media (max-width:520px){
+  .btn{
+    padding:16px 34px;
+    font-size:20px;
+  }
+}

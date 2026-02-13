@@ -75,27 +75,6 @@
       flex-wrap:wrap;
       justify-content:flex-end;
     }
-    .btn{
-      display:inline-flex;
-      align-items:center;
-      gap:8px;
-      padding:10px 14px;
-      border-radius:999px;
-      font-weight:700;
-      font-size:13px;
-      border:1px solid rgba(0,0,0,.12);
-      background:#fff;
-      cursor:pointer;
-      transition:.2s;
-      white-space:nowrap;
-    }
-    .btn:hover{ transform:translateY(-1px); }
-    .btn-primary{
-      border:none;
-      background:var(--grad);
-      color:#fff;
-      box-shadow:0 10px 24px rgba(78,125,245,.25);
-    }
 
     /* ===== Main card ===== */
     main{ padding:38px 0 70px; }
@@ -237,6 +216,7 @@
       h1{ font-size:26px; }
     }
   </style>
+  <link rel="stylesheet" href="./common.css">
 </head>
 
 <body>
@@ -247,10 +227,11 @@
           <div class="title">AI CREATOR Portfolio</div>
           <div class="sub">WORKS｜詳細</div>
         </div>
-        <div class="actions">
-          <a class="btn" href="index.html#works">← WORKSに戻る</a>
-          <a class="btn btn-primary" href="mailto:YOUR_EMAIL_HERE">相談する</a>
-        </div>
+      <div class="top-actions">
+        <a class="btn btn-outline" href="index.html#works">← WORKSに戻る</a>
+        <a class="btn btn-primary" href="index.html#contact">相談する</a>
+      </div>
+    </div>
       </div>
     </div>
   </header>
@@ -331,9 +312,7 @@
               方向性の相談だけでもOKです。用途と雰囲気を伺い、見せ方（トーン/余白/情報量）を整えます。
             </p>
 
-            <div class="cta">
-              <a class="btn btn-primary" href="mailto:YOUR_EMAIL_HERE">制作を相談する</a>
-            </div>
+
           </aside>
         </div>
       </section>

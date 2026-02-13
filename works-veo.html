@@ -74,30 +74,6 @@
       flex-wrap:wrap;
       justify-content:flex-end;
     }
-    .btn{
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      padding:10px 16px;
-      border-radius:999px;
-      font-weight:700;
-      border:2px solid transparent;
-      cursor:pointer;
-      transition:transform .2s ease, box-shadow .2s ease;
-      white-space:nowrap;
-    }
-    .btn:hover{ transform:translateY(-1px); }
-    .btn-primary{
-      background:var(--grad);
-      color:#fff;
-      box-shadow:0 8px 20px rgba(78,125,245,.25);
-    }
-    .btn-outline{
-      background:transparent;
-      border-color:var(--primary);
-      color:var(--primary);
-      box-shadow:none;
-    }
 
     /* Hero */
     .hero{
@@ -211,6 +187,7 @@
     }
   
 </style>
+<link rel="stylesheet" href="./common.css">
 </head>
 
 <body>
@@ -222,10 +199,12 @@
         <div class="t2">AI CREATOR アキフル</div>
       </div>
 
-      <div class="actions">
-        <a class="btn btn-outline" href="index.html#works">WORKSに戻る</a>
-        <a class="btn btn-primary" href="mailto:YOUR_EMAIL_HERE">相談する</a>
+      <div class="top-actions">
+        <a class="btn btn-outline" href="index.html#works">← WORKSに戻る</a>
+        <a class="btn btn-primary" href="index.html#contact">相談する</a>
       </div>
+    </div>
+
     </div>
   </div>
 
@@ -309,7 +288,6 @@
           <h2 class="section-title">動画制作のご相談について</h2>
           <p class="lead">SNS動画制作や既存動画のブラッシュアップなど、まずはお気軽にご相談ください。</p>
           <p class="lead">ポートフォリオ掲載以外の制作実績もございます。用途や予算に合わせて柔軟に対応いたします。</p>
-          <a class="btn btn-primary" href="mailto:YOUR_EMAIL_HERE">動画制作を相談する</a>
         </aside>
       </div>
     </div>

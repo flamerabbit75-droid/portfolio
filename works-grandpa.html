@@ -69,30 +69,6 @@
       justify-content:flex-end;
     }
 
-    .btn{
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      gap:8px;
-      padding:10px 14px;
-      border-radius:999px;
-      border:1px solid var(--line);
-      background:#fff;
-      box-shadow:0 6px 16px rgba(0,0,0,.06);
-      font-weight:700;
-      font-size:.92rem;
-      cursor:pointer;
-      transition:transform .15s ease, box-shadow .15s ease;
-      white-space:nowrap;
-    }
-    .btn:hover{
-      transform:translateY(-1px);
-      box-shadow:0 10px 22px rgba(0,0,0,.10);
-    }
-    .btn-primary{
-      border-color:rgba(78,125,245,.25);
-      background:linear-gradient(135deg, rgba(78,125,245,.12), rgba(78,125,245,.05));
-    }
 
     /* Main */
     main{ padding:28px 0 64px; }
@@ -214,6 +190,7 @@
       font-size:.9rem;
     }
   </style>
+  <link rel="stylesheet" href="./common.css">
 </head>
 
 <body>
@@ -226,10 +203,9 @@
       </div>
 
       <div class="top-actions">
-        <a class="btn" href="index.html#works">← WORKSに戻る</a>
+        <a class="btn btn-outline" href="index.html#works">← WORKSに戻る</a>
         <a class="btn btn-primary" href="index.html#contact">相談する</a>
-      </div>
-    </div>
+      </div>    </div>
   </div>
 
   <main class="container">
